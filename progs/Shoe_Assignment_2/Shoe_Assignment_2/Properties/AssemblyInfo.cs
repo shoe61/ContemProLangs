@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ShoeAssignment2")]
+[assembly: AssemblyTitle("Shoe_Assignment_2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("ShoeAssignment2")]
+[assembly: AssemblyProduct("Shoe_Assignment_2")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4a55a86a-f546-44c6-b2a6-afdda1c27505")]
+[assembly: Guid("7cdc6a70-12bf-47ac-9f69-8d348aa3e368")]
 
 // Version information for an assembly consists of the following four values:
 //

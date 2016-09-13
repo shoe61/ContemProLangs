@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeAssignment2", "ShoeAssignment2\ShoeAssignment2.csproj", "{FDFC52E5-99A1-49E1-A02E-0ACAB4341784}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoe_Assignment_2", "Shoe_Assignment_2\Shoe_Assignment_2.csproj", "{1050D9C9-59F1-4EC7-ADBE-9AA9CC24D974}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FDFC52E5-99A1-49E1-A02E-0ACAB4341784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDFC52E5-99A1-49E1-A02E-0ACAB4341784}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDFC52E5-99A1-49E1-A02E-0ACAB4341784}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDFC52E5-99A1-49E1-A02E-0ACAB4341784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1050D9C9-59F1-4EC7-ADBE-9AA9CC24D974}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1050D9C9-59F1-4EC7-ADBE-9AA9CC24D974}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1050D9C9-59F1-4EC7-ADBE-9AA9CC24D974}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1050D9C9-59F1-4EC7-ADBE-9AA9CC24D974}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
