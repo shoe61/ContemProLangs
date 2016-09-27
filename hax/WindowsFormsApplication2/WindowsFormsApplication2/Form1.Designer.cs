@@ -31,16 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.pictureBox5);
@@ -66,15 +68,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button1
+            // label1
             // 
-            this.button1.Location = new System.Drawing.Point(310, 354);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 68);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label1.Location = new System.Drawing.Point(72, 200);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(489, 43);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
             // 
             // pictureBox6
             // 
@@ -130,6 +130,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(310, 413);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 68);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
@@ -146,13 +156,13 @@
             this.imageList2.Images.SetKeyName(1, "drk2.png");
             this.imageList2.Images.SetKeyName(2, "lite.png");
             // 
-            // label1
+            // label2
             // 
-            this.label1.Location = new System.Drawing.Point(72, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(489, 87);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.label2.Location = new System.Drawing.Point(69, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(489, 43);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
             // 
             // Form1
             // 
@@ -187,6 +197,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
