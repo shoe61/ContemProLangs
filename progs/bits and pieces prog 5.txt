@@ -1,0 +1,7 @@
+// This virtual method cannot be instantiated. It can be overridden by 
+        // the methods of derived classes, though. It will return a two dimen-
+        // sional shape's area.
+        public virtual double Area()
+        {
+            return 0;
+        }

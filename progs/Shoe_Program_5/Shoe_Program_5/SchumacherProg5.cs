@@ -14,7 +14,27 @@ namespace Shoe_Program_5
     {
         public ScottSchumacher_Prog_5()
         {
+            List<string> Shapes = new List<string>();
+
             InitializeComponent();
+
+            Shapes.Add("Circle");
+            Shapes.Add("Square");
+            Shapes.Add("Rectangle");
+            Shapes.Add("Sphere");
+            Shapes.Add("Cube");
+            Shapes.Add("Cylinder");
+
+           
+
+
+
+
+
         }
+
+        
+
+
     }
 }
