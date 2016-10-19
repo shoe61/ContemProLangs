@@ -47,15 +47,15 @@
             this.zLabel = new System.Windows.Forms.Label();
             this.zTextBx = new System.Windows.Forms.TextBox();
             this.paremeterGrpBx = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.widthTxtBx = new System.Windows.Forms.TextBox();
             this.widthLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sideTxtBx = new System.Windows.Forms.TextBox();
             this.sideLabel = new System.Windows.Forms.Label();
-            this.radiusTextBx = new System.Windows.Forms.TextBox();
+            this.radiusTxtBx = new System.Windows.Forms.TextBox();
             this.radiusLabel = new System.Windows.Forms.Label();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.lengthTxtBx = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.heightTxtBx = new System.Windows.Forms.TextBox();
             this.heightLabel = new System.Windows.Forms.Label();
             this.step1GrpBx = new System.Windows.Forms.GroupBox();
             this.step2GrpBx = new System.Windows.Forms.GroupBox();
@@ -101,6 +101,7 @@
             this.CircleButton.TabIndex = 0;
             this.CircleButton.Text = "CIRCLE";
             this.CircleButton.UseVisualStyleBackColor = true;
+            this.CircleButton.Click += new System.EventHandler(this.CircleButton_Click);
             // 
             // SquareButton
             // 
@@ -110,6 +111,7 @@
             this.SquareButton.TabIndex = 1;
             this.SquareButton.Text = "SQUARE";
             this.SquareButton.UseVisualStyleBackColor = true;
+            this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
             // 
             // RectangleButton
             // 
@@ -119,6 +121,7 @@
             this.RectangleButton.TabIndex = 2;
             this.RectangleButton.Text = "RECTANGLE";
             this.RectangleButton.UseVisualStyleBackColor = true;
+            this.RectangleButton.Click += new System.EventHandler(this.RectangleButton_Click);
             // 
             // SphereButton
             // 
@@ -128,6 +131,7 @@
             this.SphereButton.TabIndex = 3;
             this.SphereButton.Text = "SPHERE";
             this.SphereButton.UseVisualStyleBackColor = true;
+            this.SphereButton.Click += new System.EventHandler(this.SphereButton_Click);
             // 
             // CubeButton
             // 
@@ -137,6 +141,7 @@
             this.CubeButton.TabIndex = 4;
             this.CubeButton.Text = "CUBE";
             this.CubeButton.UseVisualStyleBackColor = true;
+            this.CubeButton.Click += new System.EventHandler(this.CubeButton_Click);
             // 
             // CylinderButton
             // 
@@ -146,6 +151,7 @@
             this.CylinderButton.TabIndex = 5;
             this.CylinderButton.Text = "CYLINDER";
             this.CylinderButton.UseVisualStyleBackColor = true;
+            this.CylinderButton.Click += new System.EventHandler(this.CylinderButton_Click);
             // 
             // TwoDGroupBox
             // 
@@ -240,15 +246,15 @@
             // paremeterGrpBx
             // 
             this.paremeterGrpBx.BackColor = System.Drawing.Color.FloralWhite;
-            this.paremeterGrpBx.Controls.Add(this.textBox3);
+            this.paremeterGrpBx.Controls.Add(this.heightTxtBx);
             this.paremeterGrpBx.Controls.Add(this.heightLabel);
             this.paremeterGrpBx.Controls.Add(this.lengthTxtBx);
             this.paremeterGrpBx.Controls.Add(this.lengthLabel);
-            this.paremeterGrpBx.Controls.Add(this.textBox1);
+            this.paremeterGrpBx.Controls.Add(this.widthTxtBx);
             this.paremeterGrpBx.Controls.Add(this.widthLabel);
-            this.paremeterGrpBx.Controls.Add(this.textBox2);
+            this.paremeterGrpBx.Controls.Add(this.sideTxtBx);
             this.paremeterGrpBx.Controls.Add(this.sideLabel);
-            this.paremeterGrpBx.Controls.Add(this.radiusTextBx);
+            this.paremeterGrpBx.Controls.Add(this.radiusTxtBx);
             this.paremeterGrpBx.Controls.Add(this.radiusLabel);
             this.paremeterGrpBx.Location = new System.Drawing.Point(175, 19);
             this.paremeterGrpBx.Name = "paremeterGrpBx";
@@ -257,12 +263,12 @@
             this.paremeterGrpBx.TabStop = false;
             this.paremeterGrpBx.Text = "Other dimensions:";
             // 
-            // textBox1
+            // widthTxtBx
             // 
-            this.textBox1.Location = new System.Drawing.Point(51, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 20);
-            this.textBox1.TabIndex = 5;
+            this.widthTxtBx.Location = new System.Drawing.Point(51, 71);
+            this.widthTxtBx.Name = "widthTxtBx";
+            this.widthTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.widthTxtBx.TabIndex = 5;
             // 
             // widthLabel
             // 
@@ -273,12 +279,12 @@
             this.widthLabel.TabIndex = 4;
             this.widthLabel.Text = "width:";
             // 
-            // textBox2
+            // sideTxtBx
             // 
-            this.textBox2.Location = new System.Drawing.Point(51, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 20);
-            this.textBox2.TabIndex = 3;
+            this.sideTxtBx.Location = new System.Drawing.Point(51, 45);
+            this.sideTxtBx.Name = "sideTxtBx";
+            this.sideTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.sideTxtBx.TabIndex = 3;
             // 
             // sideLabel
             // 
@@ -289,12 +295,12 @@
             this.sideLabel.TabIndex = 2;
             this.sideLabel.Text = "side:";
             // 
-            // radiusTextBx
+            // radiusTxtBx
             // 
-            this.radiusTextBx.Location = new System.Drawing.Point(51, 19);
-            this.radiusTextBx.Name = "radiusTextBx";
-            this.radiusTextBx.Size = new System.Drawing.Size(77, 20);
-            this.radiusTextBx.TabIndex = 1;
+            this.radiusTxtBx.Location = new System.Drawing.Point(51, 19);
+            this.radiusTxtBx.Name = "radiusTxtBx";
+            this.radiusTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.radiusTxtBx.TabIndex = 1;
             // 
             // radiusLabel
             // 
@@ -321,12 +327,12 @@
             this.lengthTxtBx.Size = new System.Drawing.Size(77, 20);
             this.lengthTxtBx.TabIndex = 7;
             // 
-            // textBox3
+            // heightTxtBx
             // 
-            this.textBox3.Location = new System.Drawing.Point(51, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(77, 20);
-            this.textBox3.TabIndex = 9;
+            this.heightTxtBx.Location = new System.Drawing.Point(51, 123);
+            this.heightTxtBx.Name = "heightTxtBx";
+            this.heightTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.heightTxtBx.TabIndex = 9;
             // 
             // heightLabel
             // 
@@ -411,15 +417,15 @@
         private System.Windows.Forms.Button RectangleButton;
         private System.Windows.Forms.GroupBox step2GrpBx;
         private System.Windows.Forms.GroupBox paremeterGrpBx;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox heightTxtBx;
         private System.Windows.Forms.Label heightLabel;
         private System.Windows.Forms.TextBox lengthTxtBx;
         private System.Windows.Forms.Label lengthLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox widthTxtBx;
         private System.Windows.Forms.Label widthLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sideTxtBx;
         private System.Windows.Forms.Label sideLabel;
-        private System.Windows.Forms.TextBox radiusTextBx;
+        private System.Windows.Forms.TextBox radiusTxtBx;
         private System.Windows.Forms.Label radiusLabel;
         private System.Windows.Forms.TextBox zTextBx;
         private System.Windows.Forms.Label zLabel;

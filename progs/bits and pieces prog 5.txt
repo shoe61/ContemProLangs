@@ -1,7 +1,30 @@
 // This virtual method cannot be instantiated. It can be overridden by 
-        // the methods of derived classes, though. It will return a two dimen-
-        // sional shape's area.
-        public virtual double Area()
-        {
-            return 0;
-        }
+// the methods of derived classes, though. It will return a two dimen-
+// sional shape's area.
+public virtual double Area()
+{
+	return 0;
+}
+
+**********************************************************************************
+
+// Virtual method Volume will return the volume of a three-dimensional
+// solid.
+public virtual double Volume()
+{
+	return 0;
+}
+
+*************************************************************************************
+
+ List<string> Shapes = new List<string>();
+ 
+  Shapes.Add("Circle");
+            Shapes.Add("Square");
+            Shapes.Add("Rectangle");
+            Shapes.Add("Sphere");
+            Shapes.Add("Cube");
+            Shapes.Add("Cylinder");
+			
+******************************************************************************************
+
