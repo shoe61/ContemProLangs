@@ -1,4 +1,10 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: ThreeDimensionalSolids.cs
+//      This file defines and implements the ThreeDimensionalSolids class.
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

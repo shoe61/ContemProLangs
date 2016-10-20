@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="WelcomeInstructLabel.Text" xml:space="preserve">
-    <value>Welcome, and thanks for checking out my program. I've written this to demonstrate an inheritance hierarchy and a dynamically linked library (dll). Please notice that the screen is divided into three areas; this instruction area accross the top, a data entry area along the left side, and the dominant feature, the drawing area, which takes up most of the screen. To get started, please use the list box at the left to choose the shape you'd like to instantiate.</value>
+    <value>Welcome, and thanks for checking out my program. I've written this to demonstrate an inheritance hierarchy and a dynamically linked library (dll). Please notice that the screen is divided into three areas; this instruction area accross the top, a data entry area along the left side, and the dominant feature, the drawing area, which takes up most of the screen. To get started, please use the  buttons at the left to choose the shape you'd like to instantiate.</value>
   </data>
 </root>

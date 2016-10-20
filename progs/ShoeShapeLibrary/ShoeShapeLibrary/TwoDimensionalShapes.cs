@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: TwoDimensionalShapes.cs
+//      This file defines and implements the TwoDimensionalShapes class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

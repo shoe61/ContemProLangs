@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Square.cs
+//      This file defines and implements the Square class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

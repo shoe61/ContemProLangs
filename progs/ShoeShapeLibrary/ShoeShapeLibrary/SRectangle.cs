@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Rectangle.cs
+//      This file defines and implements the Rectangle class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Cube.cs
+//      This file defines and implements the Cube class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,12 +76,10 @@ namespace ShoeShapeLibrary
                 + lrhc + "," + "\nthe upper right corner at " + urhc +
                 ", and its upper left corner at " + ulhc + ".\n\n" + "The rear corners are: " +
                 "lower left: " + rllhc + ", lower right: " + rlrhc +",\n" + "upper right: " + 
-                rurhc + ", and upper left: " + rulhc + "." + "\n\nIts surface area is " + SurfaceArea() +
-                " and its volume is " + Volume() + ".\n";
+                rurhc + ", and upper left: " + rulhc + "." + "\n\nIts surface area is " + 
+                SurfaceArea() + " and its volume is " + Volume() + ".\n";
         }
-
-
-
+        
         // Override the Name property from AbstractShape
         public override string Name
         {
@@ -85,7 +88,6 @@ namespace ShoeShapeLibrary
                 return "Cube";
             }
         }
-
        
     }
 }

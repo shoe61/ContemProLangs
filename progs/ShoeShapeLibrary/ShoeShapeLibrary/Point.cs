@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Point.cs
+//      This file defines and implements the Point class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +16,6 @@ namespace ShoeShapeLibrary
         // Both two- and three-dimensional Shapes will instantiate Points.
         // For 2-D shapes,  int z will be 0.
         private int x, y, z;
-
-        string name;
 
         // default constructor
         public Point()

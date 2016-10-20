@@ -47,16 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SchumacherProg5.cs">
+    <Compile Include="DisplayShapes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SchumacherProg5.Designer.cs">
-      <DependentUpon>SchumacherProg5.cs</DependentUpon>
+    <Compile Include="DisplayShapes.Designer.cs">
+      <DependentUpon>DisplayShapes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="SchumacherProg5.resx">
-      <DependentUpon>SchumacherProg5.cs</DependentUpon>
+    <EmbeddedResource Include="DisplayShapes.resx">
+      <DependentUpon>DisplayShapes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

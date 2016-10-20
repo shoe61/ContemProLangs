@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Sphere.cs
+//      This file defines and implements the Sphere class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,7 +52,8 @@ namespace ShoeShapeLibrary
         // Return a string representation of the circle
         public override string ToString()
         {
-            return " is centered at" + center + " and has a radius of " + radius + ".\n\n " + "Its volume is " + Volume() + ".";
+            return " is centered at" + center + " and has a radius of " + radius + 
+                ".\n\n " + "Its volume is " + Volume() + ".";
         }
 
         // Override the Name property from AbstractShape

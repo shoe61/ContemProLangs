@@ -1,4 +1,9 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: Circle.cs
+//      This file defines and implements the circle class.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +19,7 @@ namespace ShoeShapeLibrary
 
         // default constructor
         Circle()
-        {
-            // implicit call to Point constructor
+        {            
         }
 
         // constructor
@@ -44,8 +48,7 @@ namespace ShoeShapeLibrary
         {
             return 2 * radius;
         }
-
-
+        
         // Calculate the circumference
         public double Circumference()
         {

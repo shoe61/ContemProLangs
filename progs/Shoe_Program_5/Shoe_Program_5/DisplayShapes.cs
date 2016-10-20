@@ -1,4 +1,11 @@
-﻿using System;
+﻿//      Scott Schumacher
+//      10-20-2016
+//      FileName: DisplayShapes.cs
+//      This program invites the user to select two- or three-dimensional shapes
+//      to display; It also provides a string description of each shape.
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +28,8 @@ namespace Shoe_Program_5
 
         private void CircleButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Circle button makes all other shape buttons
+            // and the unnecessary controls invisible.
             sideLabel.Visible = false;
             sideTxtBx.Visible = false;
             widthLabel.Visible = false;
@@ -42,6 +51,8 @@ namespace Shoe_Program_5
 
         private void SquareButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Square button makes all other shape buttons
+            // and the unnecessary controls invisible.
             radiusLabel.Visible = false;
             radiusTxtBx.Visible = false;
             widthLabel.Visible = false;
@@ -61,6 +72,8 @@ namespace Shoe_Program_5
 
         private void RectangleButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Rectangle button makes all other shape buttons
+            // and the unnecessary controls invisible.
             radiusLabel.Visible = false;
             radiusTxtBx.Visible = false;
             sideLabel.Visible = false;
@@ -78,6 +91,8 @@ namespace Shoe_Program_5
 
         private void SphereButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Sphere button makes all other shape buttons
+            // and the unnecessary controls invisible.
             sideLabel.Visible = false;
             sideTxtBx.Visible = false;
             widthLabel.Visible = false;
@@ -97,6 +112,8 @@ namespace Shoe_Program_5
 
         private void CubeButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Cube button makes all other shape buttons
+            // and the unnecessary controls invisible.
             radiusLabel.Visible = false;
             radiusTxtBx.Visible = false;
             widthLabel.Visible = false;
@@ -114,6 +131,8 @@ namespace Shoe_Program_5
 
         private void CylinderButton_Click(object sender, EventArgs e)
         {
+            // Clicking the Cylinder button makes all other shape buttons
+            // and the unnecessary controls invisible.
             sideLabel.Visible = false;
             sideTxtBx.Visible = false;
             widthLabel.Visible = false;
@@ -132,10 +151,13 @@ namespace Shoe_Program_5
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-
+            // The Draw Button's actions depend on which controls are visible;
+            // If a user clicks the Draw Button without having supplied all the 
+            // required information, an exception is thrown and the user is ad-
+            // vised through a MessageBox to observe the correct sequence.
             try
             {
-                if (CircleButton.Visible)
+                if (CircleButton.Visible) //instantiate and display a circle
                 {
                     Circle bob = new Circle(double.Parse(radiusTxtBx.Text), 
                         int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 0);
@@ -144,7 +166,7 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else if (SquareButton.Visible)
+                if (SquareButton.Visible) //instantiate and display a square
                 {
                     Square lucy = new Square(int.Parse(xTextBox.Text), 
                         int.Parse(yTextBx.Text), int.Parse(sideTxtBx.Text));
@@ -153,7 +175,7 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else if (RectangleButton.Visible)
+                if (RectangleButton.Visible) //instantiate and display a rectangle
                 {
                     SRectangle fred = new SRectangle(int.Parse(xTextBox.Text), 
                         int.Parse(yTextBx.Text), int.Parse(lengthTxtBx.Text), 
@@ -163,7 +185,7 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else if (SphereButton.Visible)
+                if (SphereButton.Visible) //instantiate and display a sphere
                 {
                     Sphere heather = new Sphere(int.Parse(xTextBox.Text), 
                         int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), 
@@ -173,7 +195,7 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else if (CubeButton.Visible)
+                if (CubeButton.Visible) //instantiate and display a cube
                 {
                     Cube newton = new Cube(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text),
                         int.Parse(zTextBx.Text), int.Parse(sideTxtBx.Text));
@@ -182,7 +204,7 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else if (CylinderButton.Visible)
+                if (CylinderButton.Visible) //instantiate and display a cylinder
                 {
                     Cylinder felix = new Cylinder(double.Parse(radiusTxtBx.Text), 
                         int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 
@@ -192,13 +214,10 @@ namespace Shoe_Program_5
                     DescriptionLabel.Text = output;
                 }
 
-                else
-                {
-                    MessageBox.Show("Please select a shape before you try to draw.");
-                }
+                
             }
 
-            catch(Exception ex)
+            catch(Exception ex) // display the system message and specific instructions
             {
                 MessageBox.Show(ex.Message + " Please select a shape  and enter " 
                 + "the required data before clicking the Draw button.");
@@ -207,6 +226,8 @@ namespace Shoe_Program_5
 
         }
 
+        // The TryAgainButton resets all the controls to visible and erases
+        // all data.
         private void TryAgainButton_Click(object sender, EventArgs e)
         {
             radiusLabel.Visible = true;
@@ -238,6 +259,7 @@ namespace Shoe_Program_5
             widthTxtBx.Text = "";
             heightTxtBx.Text = "";
             ShapePictureBx.Image = null;
+            DescriptionLabel.Text = null;
         }
 
         
