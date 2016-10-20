@@ -16,7 +16,7 @@ namespace shapeTester
             Point zorg = new Point(2, 3, 5);
             Circle bob = new Circle(4,2,2,0);
             Square sally = new Square(3, 3, 5);
-            Rectangle stan = new Rectangle("stan", 4, 4, 10, 5);
+            Rectangle stan = new Rectangle(4, 4, 10, 5);
             Cylinder felix = new Cylinder(4.5, 8, 3, 7, 10);
             AbstractShape shozape;
 

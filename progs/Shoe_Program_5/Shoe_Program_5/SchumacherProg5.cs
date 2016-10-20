@@ -161,7 +161,9 @@ namespace Shoe_Program_5
 
             if(CubeButton.Visible)
             {
-                //pass
+                Cube newton = new Cube(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), int.Parse(sideTxtBx.Text));
+                string output = newton.Name + " " + newton + "\n";
+                MessageBox.Show(output);
             }
 
             if(CylinderButton.Visible)
@@ -195,6 +197,14 @@ namespace Shoe_Program_5
             SphereButton.Visible = true;
             CubeButton.Visible = true;
             CylinderButton.Visible = true;
+            xTextBox.Text = "";
+            yTextBx.Text = "";
+            zTextBx.Text = "";
+            radiusTxtBx.Text = "";
+            sideTxtBx.Text = "";
+            lengthTxtBx.Text = "";
+            widthTxtBx.Text = "";
+            heightTxtBx.Text = "";
         }
 
         

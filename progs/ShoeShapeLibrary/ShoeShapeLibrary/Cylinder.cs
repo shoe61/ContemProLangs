@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoeShapeLibrary
 {
-    public class Cylinder : ThreeDimensionalSolids //Inherits from TwoDimensionalShapes
+    public class Cylinder : ThreeDimensionalSolids //Inherits from ThreeDimensionalSolids
     {
         Circle CylBase;
         private double height;

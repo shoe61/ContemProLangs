@@ -61,6 +61,7 @@
             this.step2GrpBx = new System.Windows.Forms.GroupBox();
             this.DrawButton = new System.Windows.Forms.Button();
             this.TryAgainButton = new System.Windows.Forms.Button();
+            this.ShapePictureBx = new System.Windows.Forms.PictureBox();
             this.UserInputGrpBx.SuspendLayout();
             this.TwoDGroupBox.SuspendLayout();
             this.ThreeDGroupBx.SuspendLayout();
@@ -68,6 +69,7 @@
             this.paremeterGrpBx.SuspendLayout();
             this.step1GrpBx.SuspendLayout();
             this.step2GrpBx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ShapePictureBx)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeInstructLabel
@@ -388,11 +390,23 @@
             this.TryAgainButton.UseVisualStyleBackColor = true;
             this.TryAgainButton.Click += new System.EventHandler(this.TryAgainButton_Click);
             // 
+            // ShapePictureBx
+            // 
+            this.ShapePictureBx.BackColor = System.Drawing.Color.White;
+            this.ShapePictureBx.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ShapePictureBx.Location = new System.Drawing.Point(467, 114);
+            this.ShapePictureBx.Name = "ShapePictureBx";
+            this.ShapePictureBx.Size = new System.Drawing.Size(677, 382);
+            this.ShapePictureBx.TabIndex = 3;
+            this.ShapePictureBx.TabStop = false;
+            // 
             // ScottSchumacher_Prog_5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(1356, 625);
+            this.Controls.Add(this.ShapePictureBx);
             this.Controls.Add(this.UserInputGrpBx);
             this.Controls.Add(this.WelcomeInstructLabel);
             this.Name = "ScottSchumacher_Prog_5";
@@ -407,6 +421,7 @@
             this.paremeterGrpBx.PerformLayout();
             this.step1GrpBx.ResumeLayout(false);
             this.step2GrpBx.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ShapePictureBx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,6 +460,7 @@
         private System.Windows.Forms.GroupBox step1GrpBx;
         private System.Windows.Forms.Button DrawButton;
         private System.Windows.Forms.Button TryAgainButton;
+        private System.Windows.Forms.PictureBox ShapePictureBx;
     }
 }
 
