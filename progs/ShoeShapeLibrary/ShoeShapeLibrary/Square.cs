@@ -59,9 +59,9 @@ namespace ShoeShapeLibrary
         // Return String Representation
         public override string ToString()
         {
-            return " has its lower left corner at " + llhc + "its lower right corner at "
-                + lrhc + "the upper right corner at " + urhc +
-                "and its upper left corner at " + ulhc + ".\n" + "Its area is " + Area() +
+            return " has its lower left corner at " + llhc + ", its lower right corner at "
+                + lrhc + "," +"\n the upper right corner at " + urhc +
+                ", and its upper left corner at " + ulhc + ".\n\n" + "Its area is " + Area() +
                 " and its perimeter is " + Perimeter() +".\n";
         }
 

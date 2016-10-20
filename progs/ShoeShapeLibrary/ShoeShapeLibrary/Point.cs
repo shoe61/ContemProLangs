@@ -74,7 +74,7 @@ namespace ShoeShapeLibrary
         // Return a string representation of the Point:
         public override string ToString()
         {
-            return "coordinates: (" + X + ", " + Y + ", " + Z + ")\n";
+            return " (" + X + ", " + Y + ", " + Z + ")";
         }
 
         // Implement the abstract property Name inherited from AbstractShape:

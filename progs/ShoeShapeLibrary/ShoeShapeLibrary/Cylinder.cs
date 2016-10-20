@@ -43,8 +43,8 @@ namespace ShoeShapeLibrary
         // Return a string representation of the cylinder
          public override string ToString()
         {
-            return " 's base is centered at " + CylBase.center + "and has a radius of " + CylBase.Radius + ".\n" +
-                "Cylinder's volume is " + Volume() + " and its surface area is " + SurfaceArea() + ".\n";
+            return " 's base is centered at " + CylBase.center + ". It has a radius of " + CylBase.Radius + ".\n" +
+                "Cylinder's height is: " + height + "." + "\n\nIts volume is " + Volume() + " and its surface area is " + SurfaceArea() + ".\n";
         }
 
         // Override the Name property from AbstractShape

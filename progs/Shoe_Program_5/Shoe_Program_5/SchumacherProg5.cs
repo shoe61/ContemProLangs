@@ -128,50 +128,82 @@ namespace Shoe_Program_5
             SphereButton.Visible = false;
             CubeButton.Visible = false;
         }
+        
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            if(CircleButton.Visible)
+
+            try
             {
-                Circle bob = new Circle(double.Parse(radiusTxtBx.Text), int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 0);
-                string output = bob.Name + " " + bob + "\n";
-                MessageBox.Show(output);
+                if (CircleButton.Visible)
+                {
+                    Circle bob = new Circle(double.Parse(radiusTxtBx.Text), 
+                        int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 0);
+                    string output = bob.Name + " " + bob;
+                    ShapePictureBx.ImageLocation = "circle.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else if (SquareButton.Visible)
+                {
+                    Square lucy = new Square(int.Parse(xTextBox.Text), 
+                        int.Parse(yTextBx.Text), int.Parse(sideTxtBx.Text));
+                    string output = lucy.Name + " " + lucy + "\n";
+                    ShapePictureBx.ImageLocation = "square.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else if (RectangleButton.Visible)
+                {
+                    SRectangle fred = new SRectangle(int.Parse(xTextBox.Text), 
+                        int.Parse(yTextBx.Text), int.Parse(lengthTxtBx.Text), 
+                        int.Parse(widthTxtBx.Text));
+                    string output = fred.Name + " " + fred + "\n";
+                    ShapePictureBx.ImageLocation = "rectangle.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else if (SphereButton.Visible)
+                {
+                    Sphere heather = new Sphere(int.Parse(xTextBox.Text), 
+                        int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), 
+                        double.Parse(radiusTxtBx.Text));
+                    string output = heather.Name + " " + heather + "\n";
+                    ShapePictureBx.ImageLocation = "sphere.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else if (CubeButton.Visible)
+                {
+                    Cube newton = new Cube(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text),
+                        int.Parse(zTextBx.Text), int.Parse(sideTxtBx.Text));
+                    string output = newton.Name + " " + newton + "\n";
+                    ShapePictureBx.ImageLocation = "cube.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else if (CylinderButton.Visible)
+                {
+                    Cylinder felix = new Cylinder(double.Parse(radiusTxtBx.Text), 
+                        int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 
+                        int.Parse(zTextBx.Text), double.Parse(heightTxtBx.Text));
+                    string output = felix.Name + " " + felix + "\n";
+                    ShapePictureBx.ImageLocation = "cylinder.png";
+                    DescriptionLabel.Text = output;
+                }
+
+                else
+                {
+                    MessageBox.Show("Please select a shape before you try to draw.");
+                }
             }
 
-            if(SquareButton.Visible)
+            catch(Exception ex)
             {
-                Square lucy = new Square(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(sideTxtBx.Text));
-                string output = lucy.Name + " " + lucy + "\n";
-                MessageBox.Show(output);
+                MessageBox.Show(ex.Message + " Please select a shape  and enter " 
+                + "the required data before clicking the Draw button.");
             }
-
-            if(RectangleButton.Visible)
-            {
-                SRectangle fred = new SRectangle(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(lengthTxtBx.Text), int.Parse(widthTxtBx.Text));
-                string output = fred.Name + " " + fred + "\n";
-                MessageBox.Show(output);
-            }
-
-            if(SphereButton.Visible)
-            {
-                Sphere heather = new Sphere(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), double.Parse(radiusTxtBx.Text));
-                string output = heather.Name + " " + heather + "\n";
-                MessageBox.Show(output);
-            }
-
-            if(CubeButton.Visible)
-            {
-                Cube newton = new Cube(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), int.Parse(sideTxtBx.Text));
-                string output = newton.Name + " " + newton + "\n";
-                MessageBox.Show(output);
-            }
-
-            if(CylinderButton.Visible)
-            {
-                Cylinder felix = new Cylinder(double.Parse(radiusTxtBx.Text), int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), double.Parse(heightTxtBx.Text));
-                string output = felix.Name + " " + felix + "\n";
-                MessageBox.Show(output);
-            }
+            
 
         }
 
@@ -205,6 +237,7 @@ namespace Shoe_Program_5
             lengthTxtBx.Text = "";
             widthTxtBx.Text = "";
             heightTxtBx.Text = "";
+            ShapePictureBx.Image = null;
         }
 
         

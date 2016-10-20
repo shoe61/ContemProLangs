@@ -31,44 +31,45 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScottSchumacher_Prog_5));
             this.WelcomeInstructLabel = new System.Windows.Forms.Label();
             this.UserInputGrpBx = new System.Windows.Forms.GroupBox();
-            this.CircleButton = new System.Windows.Forms.Button();
-            this.SquareButton = new System.Windows.Forms.Button();
-            this.RectangleButton = new System.Windows.Forms.Button();
-            this.SphereButton = new System.Windows.Forms.Button();
-            this.CubeButton = new System.Windows.Forms.Button();
-            this.CylinderButton = new System.Windows.Forms.Button();
-            this.TwoDGroupBox = new System.Windows.Forms.GroupBox();
-            this.ThreeDGroupBx = new System.Windows.Forms.GroupBox();
-            this.PointCoordsGrpBx = new System.Windows.Forms.GroupBox();
-            this.xLabel = new System.Windows.Forms.Label();
-            this.xTextBox = new System.Windows.Forms.TextBox();
-            this.yLabel = new System.Windows.Forms.Label();
-            this.yTextBx = new System.Windows.Forms.TextBox();
-            this.zLabel = new System.Windows.Forms.Label();
-            this.zTextBx = new System.Windows.Forms.TextBox();
+            this.TryAgainButton = new System.Windows.Forms.Button();
+            this.DrawButton = new System.Windows.Forms.Button();
+            this.step2GrpBx = new System.Windows.Forms.GroupBox();
             this.paremeterGrpBx = new System.Windows.Forms.GroupBox();
+            this.heightTxtBx = new System.Windows.Forms.TextBox();
+            this.heightLabel = new System.Windows.Forms.Label();
+            this.lengthTxtBx = new System.Windows.Forms.TextBox();
+            this.lengthLabel = new System.Windows.Forms.Label();
             this.widthTxtBx = new System.Windows.Forms.TextBox();
             this.widthLabel = new System.Windows.Forms.Label();
             this.sideTxtBx = new System.Windows.Forms.TextBox();
             this.sideLabel = new System.Windows.Forms.Label();
             this.radiusTxtBx = new System.Windows.Forms.TextBox();
             this.radiusLabel = new System.Windows.Forms.Label();
-            this.lengthLabel = new System.Windows.Forms.Label();
-            this.lengthTxtBx = new System.Windows.Forms.TextBox();
-            this.heightTxtBx = new System.Windows.Forms.TextBox();
-            this.heightLabel = new System.Windows.Forms.Label();
+            this.PointCoordsGrpBx = new System.Windows.Forms.GroupBox();
+            this.zTextBx = new System.Windows.Forms.TextBox();
+            this.zLabel = new System.Windows.Forms.Label();
+            this.yTextBx = new System.Windows.Forms.TextBox();
+            this.yLabel = new System.Windows.Forms.Label();
+            this.xTextBox = new System.Windows.Forms.TextBox();
+            this.xLabel = new System.Windows.Forms.Label();
             this.step1GrpBx = new System.Windows.Forms.GroupBox();
-            this.step2GrpBx = new System.Windows.Forms.GroupBox();
-            this.DrawButton = new System.Windows.Forms.Button();
-            this.TryAgainButton = new System.Windows.Forms.Button();
+            this.TwoDGroupBox = new System.Windows.Forms.GroupBox();
+            this.SquareButton = new System.Windows.Forms.Button();
+            this.CircleButton = new System.Windows.Forms.Button();
+            this.RectangleButton = new System.Windows.Forms.Button();
+            this.ThreeDGroupBx = new System.Windows.Forms.GroupBox();
+            this.CubeButton = new System.Windows.Forms.Button();
+            this.SphereButton = new System.Windows.Forms.Button();
+            this.CylinderButton = new System.Windows.Forms.Button();
             this.ShapePictureBx = new System.Windows.Forms.PictureBox();
+            this.DescriptionLabel = new System.Windows.Forms.Label();
             this.UserInputGrpBx.SuspendLayout();
+            this.step2GrpBx.SuspendLayout();
+            this.paremeterGrpBx.SuspendLayout();
+            this.PointCoordsGrpBx.SuspendLayout();
+            this.step1GrpBx.SuspendLayout();
             this.TwoDGroupBox.SuspendLayout();
             this.ThreeDGroupBx.SuspendLayout();
-            this.PointCoordsGrpBx.SuspendLayout();
-            this.paremeterGrpBx.SuspendLayout();
-            this.step1GrpBx.SuspendLayout();
-            this.step2GrpBx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShapePictureBx)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,155 +98,37 @@
             this.UserInputGrpBx.TabStop = false;
             this.UserInputGrpBx.Text = "First, choose a shape:";
             // 
-            // CircleButton
+            // TryAgainButton
             // 
-            this.CircleButton.Location = new System.Drawing.Point(17, 40);
-            this.CircleButton.Name = "CircleButton";
-            this.CircleButton.Size = new System.Drawing.Size(83, 23);
-            this.CircleButton.TabIndex = 0;
-            this.CircleButton.Text = "CIRCLE";
-            this.CircleButton.UseVisualStyleBackColor = true;
-            this.CircleButton.Click += new System.EventHandler(this.CircleButton_Click);
+            this.TryAgainButton.Location = new System.Drawing.Point(226, 440);
+            this.TryAgainButton.Name = "TryAgainButton";
+            this.TryAgainButton.Size = new System.Drawing.Size(84, 62);
+            this.TryAgainButton.TabIndex = 3;
+            this.TryAgainButton.Text = "Try Another";
+            this.TryAgainButton.UseVisualStyleBackColor = true;
+            this.TryAgainButton.Click += new System.EventHandler(this.TryAgainButton_Click);
             // 
-            // SquareButton
+            // DrawButton
             // 
-            this.SquareButton.Location = new System.Drawing.Point(17, 69);
-            this.SquareButton.Name = "SquareButton";
-            this.SquareButton.Size = new System.Drawing.Size(83, 23);
-            this.SquareButton.TabIndex = 1;
-            this.SquareButton.Text = "SQUARE";
-            this.SquareButton.UseVisualStyleBackColor = true;
-            this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
+            this.DrawButton.Location = new System.Drawing.Point(58, 440);
+            this.DrawButton.Name = "DrawButton";
+            this.DrawButton.Size = new System.Drawing.Size(125, 62);
+            this.DrawButton.TabIndex = 2;
+            this.DrawButton.Text = "Draw your shape";
+            this.DrawButton.UseVisualStyleBackColor = true;
+            this.DrawButton.Click += new System.EventHandler(this.DrawButton_Click);
             // 
-            // RectangleButton
+            // step2GrpBx
             // 
-            this.RectangleButton.Location = new System.Drawing.Point(17, 99);
-            this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(83, 23);
-            this.RectangleButton.TabIndex = 2;
-            this.RectangleButton.Text = "RECTANGLE";
-            this.RectangleButton.UseVisualStyleBackColor = true;
-            this.RectangleButton.Click += new System.EventHandler(this.RectangleButton_Click);
-            // 
-            // SphereButton
-            // 
-            this.SphereButton.Location = new System.Drawing.Point(16, 40);
-            this.SphereButton.Name = "SphereButton";
-            this.SphereButton.Size = new System.Drawing.Size(83, 23);
-            this.SphereButton.TabIndex = 3;
-            this.SphereButton.Text = "SPHERE";
-            this.SphereButton.UseVisualStyleBackColor = true;
-            this.SphereButton.Click += new System.EventHandler(this.SphereButton_Click);
-            // 
-            // CubeButton
-            // 
-            this.CubeButton.Location = new System.Drawing.Point(16, 69);
-            this.CubeButton.Name = "CubeButton";
-            this.CubeButton.Size = new System.Drawing.Size(83, 23);
-            this.CubeButton.TabIndex = 4;
-            this.CubeButton.Text = "CUBE";
-            this.CubeButton.UseVisualStyleBackColor = true;
-            this.CubeButton.Click += new System.EventHandler(this.CubeButton_Click);
-            // 
-            // CylinderButton
-            // 
-            this.CylinderButton.Location = new System.Drawing.Point(16, 99);
-            this.CylinderButton.Name = "CylinderButton";
-            this.CylinderButton.Size = new System.Drawing.Size(83, 23);
-            this.CylinderButton.TabIndex = 5;
-            this.CylinderButton.Text = "CYLINDER";
-            this.CylinderButton.UseVisualStyleBackColor = true;
-            this.CylinderButton.Click += new System.EventHandler(this.CylinderButton_Click);
-            // 
-            // TwoDGroupBox
-            // 
-            this.TwoDGroupBox.BackColor = System.Drawing.Color.FloralWhite;
-            this.TwoDGroupBox.Controls.Add(this.SquareButton);
-            this.TwoDGroupBox.Controls.Add(this.CircleButton);
-            this.TwoDGroupBox.Controls.Add(this.RectangleButton);
-            this.TwoDGroupBox.Location = new System.Drawing.Point(18, 19);
-            this.TwoDGroupBox.Name = "TwoDGroupBox";
-            this.TwoDGroupBox.Size = new System.Drawing.Size(137, 143);
-            this.TwoDGroupBox.TabIndex = 6;
-            this.TwoDGroupBox.TabStop = false;
-            this.TwoDGroupBox.Text = "Two-dimensional shapes";
-            // 
-            // ThreeDGroupBx
-            // 
-            this.ThreeDGroupBx.BackColor = System.Drawing.Color.FloralWhite;
-            this.ThreeDGroupBx.Controls.Add(this.CubeButton);
-            this.ThreeDGroupBx.Controls.Add(this.SphereButton);
-            this.ThreeDGroupBx.Controls.Add(this.CylinderButton);
-            this.ThreeDGroupBx.Location = new System.Drawing.Point(174, 19);
-            this.ThreeDGroupBx.Name = "ThreeDGroupBx";
-            this.ThreeDGroupBx.Size = new System.Drawing.Size(137, 143);
-            this.ThreeDGroupBx.TabIndex = 7;
-            this.ThreeDGroupBx.TabStop = false;
-            this.ThreeDGroupBx.Text = "Three dimesional shapes";
-            // 
-            // PointCoordsGrpBx
-            // 
-            this.PointCoordsGrpBx.BackColor = System.Drawing.Color.FloralWhite;
-            this.PointCoordsGrpBx.Controls.Add(this.zTextBx);
-            this.PointCoordsGrpBx.Controls.Add(this.zLabel);
-            this.PointCoordsGrpBx.Controls.Add(this.yTextBx);
-            this.PointCoordsGrpBx.Controls.Add(this.yLabel);
-            this.PointCoordsGrpBx.Controls.Add(this.xTextBox);
-            this.PointCoordsGrpBx.Controls.Add(this.xLabel);
-            this.PointCoordsGrpBx.Location = new System.Drawing.Point(6, 19);
-            this.PointCoordsGrpBx.Name = "PointCoordsGrpBx";
-            this.PointCoordsGrpBx.Size = new System.Drawing.Size(150, 163);
-            this.PointCoordsGrpBx.TabIndex = 8;
-            this.PointCoordsGrpBx.TabStop = false;
-            this.PointCoordsGrpBx.Text = "Point Coordinates:";
-            // 
-            // xLabel
-            // 
-            this.xLabel.AutoSize = true;
-            this.xLabel.Location = new System.Drawing.Point(7, 20);
-            this.xLabel.Name = "xLabel";
-            this.xLabel.Size = new System.Drawing.Size(15, 13);
-            this.xLabel.TabIndex = 0;
-            this.xLabel.Text = "x:";
-            // 
-            // xTextBox
-            // 
-            this.xTextBox.Location = new System.Drawing.Point(28, 19);
-            this.xTextBox.Name = "xTextBox";
-            this.xTextBox.Size = new System.Drawing.Size(100, 20);
-            this.xTextBox.TabIndex = 1;
-            // 
-            // yLabel
-            // 
-            this.yLabel.AutoSize = true;
-            this.yLabel.Location = new System.Drawing.Point(10, 70);
-            this.yLabel.Name = "yLabel";
-            this.yLabel.Size = new System.Drawing.Size(15, 13);
-            this.yLabel.TabIndex = 2;
-            this.yLabel.Text = "y:";
-            // 
-            // yTextBx
-            // 
-            this.yTextBx.Location = new System.Drawing.Point(28, 67);
-            this.yTextBx.Name = "yTextBx";
-            this.yTextBx.Size = new System.Drawing.Size(100, 20);
-            this.yTextBx.TabIndex = 3;
-            // 
-            // zLabel
-            // 
-            this.zLabel.AutoSize = true;
-            this.zLabel.Location = new System.Drawing.Point(10, 120);
-            this.zLabel.Name = "zLabel";
-            this.zLabel.Size = new System.Drawing.Size(15, 13);
-            this.zLabel.TabIndex = 4;
-            this.zLabel.Text = "z:";
-            // 
-            // zTextBx
-            // 
-            this.zTextBx.Location = new System.Drawing.Point(28, 117);
-            this.zTextBx.Name = "zTextBx";
-            this.zTextBx.Size = new System.Drawing.Size(100, 20);
-            this.zTextBx.TabIndex = 5;
+            this.step2GrpBx.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.step2GrpBx.Controls.Add(this.paremeterGrpBx);
+            this.step2GrpBx.Controls.Add(this.PointCoordsGrpBx);
+            this.step2GrpBx.Location = new System.Drawing.Point(7, 223);
+            this.step2GrpBx.Name = "step2GrpBx";
+            this.step2GrpBx.Size = new System.Drawing.Size(323, 180);
+            this.step2GrpBx.TabIndex = 1;
+            this.step2GrpBx.TabStop = false;
+            this.step2GrpBx.Text = "enter the highlighted items:";
             // 
             // paremeterGrpBx
             // 
@@ -267,17 +150,49 @@
             this.paremeterGrpBx.TabStop = false;
             this.paremeterGrpBx.Text = "Other dimensions:";
             // 
+            // heightTxtBx
+            // 
+            this.heightTxtBx.Location = new System.Drawing.Point(51, 123);
+            this.heightTxtBx.Name = "heightTxtBx";
+            this.heightTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.heightTxtBx.TabIndex = 9;
+            // 
+            // heightLabel
+            // 
+            this.heightLabel.AutoSize = true;
+            this.heightLabel.Location = new System.Drawing.Point(10, 126);
+            this.heightLabel.Name = "heightLabel";
+            this.heightLabel.Size = new System.Drawing.Size(39, 13);
+            this.heightLabel.TabIndex = 8;
+            this.heightLabel.Text = "height:";
+            // 
+            // lengthTxtBx
+            // 
+            this.lengthTxtBx.Location = new System.Drawing.Point(51, 71);
+            this.lengthTxtBx.Name = "lengthTxtBx";
+            this.lengthTxtBx.Size = new System.Drawing.Size(77, 20);
+            this.lengthTxtBx.TabIndex = 5;
+            // 
+            // lengthLabel
+            // 
+            this.lengthLabel.AutoSize = true;
+            this.lengthLabel.Location = new System.Drawing.Point(10, 74);
+            this.lengthLabel.Name = "lengthLabel";
+            this.lengthLabel.Size = new System.Drawing.Size(39, 13);
+            this.lengthLabel.TabIndex = 6;
+            this.lengthLabel.Text = "length:";
+            // 
             // widthTxtBx
             // 
-            this.widthTxtBx.Location = new System.Drawing.Point(51, 71);
+            this.widthTxtBx.Location = new System.Drawing.Point(51, 97);
             this.widthTxtBx.Name = "widthTxtBx";
             this.widthTxtBx.Size = new System.Drawing.Size(77, 20);
-            this.widthTxtBx.TabIndex = 5;
+            this.widthTxtBx.TabIndex = 7;
             // 
             // widthLabel
             // 
             this.widthLabel.AutoSize = true;
-            this.widthLabel.Location = new System.Drawing.Point(10, 74);
+            this.widthLabel.Location = new System.Drawing.Point(10, 100);
             this.widthLabel.Name = "widthLabel";
             this.widthLabel.Size = new System.Drawing.Size(35, 13);
             this.widthLabel.TabIndex = 4;
@@ -315,37 +230,69 @@
             this.radiusLabel.TabIndex = 0;
             this.radiusLabel.Text = "radius:";
             // 
-            // lengthLabel
+            // PointCoordsGrpBx
             // 
-            this.lengthLabel.AutoSize = true;
-            this.lengthLabel.Location = new System.Drawing.Point(10, 100);
-            this.lengthLabel.Name = "lengthLabel";
-            this.lengthLabel.Size = new System.Drawing.Size(39, 13);
-            this.lengthLabel.TabIndex = 6;
-            this.lengthLabel.Text = "length:";
+            this.PointCoordsGrpBx.BackColor = System.Drawing.Color.FloralWhite;
+            this.PointCoordsGrpBx.Controls.Add(this.zTextBx);
+            this.PointCoordsGrpBx.Controls.Add(this.zLabel);
+            this.PointCoordsGrpBx.Controls.Add(this.yTextBx);
+            this.PointCoordsGrpBx.Controls.Add(this.yLabel);
+            this.PointCoordsGrpBx.Controls.Add(this.xTextBox);
+            this.PointCoordsGrpBx.Controls.Add(this.xLabel);
+            this.PointCoordsGrpBx.Location = new System.Drawing.Point(6, 19);
+            this.PointCoordsGrpBx.Name = "PointCoordsGrpBx";
+            this.PointCoordsGrpBx.Size = new System.Drawing.Size(150, 163);
+            this.PointCoordsGrpBx.TabIndex = 8;
+            this.PointCoordsGrpBx.TabStop = false;
+            this.PointCoordsGrpBx.Text = "Point Coordinates:";
             // 
-            // lengthTxtBx
+            // zTextBx
             // 
-            this.lengthTxtBx.Location = new System.Drawing.Point(51, 97);
-            this.lengthTxtBx.Name = "lengthTxtBx";
-            this.lengthTxtBx.Size = new System.Drawing.Size(77, 20);
-            this.lengthTxtBx.TabIndex = 7;
+            this.zTextBx.Location = new System.Drawing.Point(28, 117);
+            this.zTextBx.Name = "zTextBx";
+            this.zTextBx.Size = new System.Drawing.Size(100, 20);
+            this.zTextBx.TabIndex = 5;
             // 
-            // heightTxtBx
+            // zLabel
             // 
-            this.heightTxtBx.Location = new System.Drawing.Point(51, 123);
-            this.heightTxtBx.Name = "heightTxtBx";
-            this.heightTxtBx.Size = new System.Drawing.Size(77, 20);
-            this.heightTxtBx.TabIndex = 9;
+            this.zLabel.AutoSize = true;
+            this.zLabel.Location = new System.Drawing.Point(10, 120);
+            this.zLabel.Name = "zLabel";
+            this.zLabel.Size = new System.Drawing.Size(15, 13);
+            this.zLabel.TabIndex = 4;
+            this.zLabel.Text = "z:";
             // 
-            // heightLabel
+            // yTextBx
             // 
-            this.heightLabel.AutoSize = true;
-            this.heightLabel.Location = new System.Drawing.Point(10, 126);
-            this.heightLabel.Name = "heightLabel";
-            this.heightLabel.Size = new System.Drawing.Size(39, 13);
-            this.heightLabel.TabIndex = 8;
-            this.heightLabel.Text = "height:";
+            this.yTextBx.Location = new System.Drawing.Point(28, 67);
+            this.yTextBx.Name = "yTextBx";
+            this.yTextBx.Size = new System.Drawing.Size(100, 20);
+            this.yTextBx.TabIndex = 3;
+            // 
+            // yLabel
+            // 
+            this.yLabel.AutoSize = true;
+            this.yLabel.Location = new System.Drawing.Point(10, 70);
+            this.yLabel.Name = "yLabel";
+            this.yLabel.Size = new System.Drawing.Size(15, 13);
+            this.yLabel.TabIndex = 2;
+            this.yLabel.Text = "y:";
+            // 
+            // xTextBox
+            // 
+            this.xTextBox.Location = new System.Drawing.Point(28, 19);
+            this.xTextBox.Name = "xTextBox";
+            this.xTextBox.Size = new System.Drawing.Size(100, 20);
+            this.xTextBox.TabIndex = 1;
+            // 
+            // xLabel
+            // 
+            this.xLabel.AutoSize = true;
+            this.xLabel.Location = new System.Drawing.Point(7, 20);
+            this.xLabel.Name = "xLabel";
+            this.xLabel.Size = new System.Drawing.Size(15, 13);
+            this.xLabel.TabIndex = 0;
+            this.xLabel.Text = "x:";
             // 
             // step1GrpBx
             // 
@@ -358,37 +305,91 @@
             this.step1GrpBx.TabIndex = 0;
             this.step1GrpBx.TabStop = false;
             // 
-            // step2GrpBx
+            // TwoDGroupBox
             // 
-            this.step2GrpBx.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.step2GrpBx.Controls.Add(this.paremeterGrpBx);
-            this.step2GrpBx.Controls.Add(this.PointCoordsGrpBx);
-            this.step2GrpBx.Location = new System.Drawing.Point(7, 223);
-            this.step2GrpBx.Name = "step2GrpBx";
-            this.step2GrpBx.Size = new System.Drawing.Size(323, 180);
-            this.step2GrpBx.TabIndex = 1;
-            this.step2GrpBx.TabStop = false;
-            this.step2GrpBx.Text = "enter the highlighted items:";
+            this.TwoDGroupBox.BackColor = System.Drawing.Color.FloralWhite;
+            this.TwoDGroupBox.Controls.Add(this.SquareButton);
+            this.TwoDGroupBox.Controls.Add(this.CircleButton);
+            this.TwoDGroupBox.Controls.Add(this.RectangleButton);
+            this.TwoDGroupBox.Location = new System.Drawing.Point(18, 19);
+            this.TwoDGroupBox.Name = "TwoDGroupBox";
+            this.TwoDGroupBox.Size = new System.Drawing.Size(137, 143);
+            this.TwoDGroupBox.TabIndex = 6;
+            this.TwoDGroupBox.TabStop = false;
+            this.TwoDGroupBox.Text = "Two-dimensional shapes";
             // 
-            // DrawButton
+            // SquareButton
             // 
-            this.DrawButton.Location = new System.Drawing.Point(58, 440);
-            this.DrawButton.Name = "DrawButton";
-            this.DrawButton.Size = new System.Drawing.Size(125, 62);
-            this.DrawButton.TabIndex = 2;
-            this.DrawButton.Text = "Draw your shape";
-            this.DrawButton.UseVisualStyleBackColor = true;
-            this.DrawButton.Click += new System.EventHandler(this.DrawButton_Click);
+            this.SquareButton.Location = new System.Drawing.Point(17, 69);
+            this.SquareButton.Name = "SquareButton";
+            this.SquareButton.Size = new System.Drawing.Size(83, 23);
+            this.SquareButton.TabIndex = 1;
+            this.SquareButton.Text = "SQUARE";
+            this.SquareButton.UseVisualStyleBackColor = true;
+            this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
             // 
-            // TryAgainButton
+            // CircleButton
             // 
-            this.TryAgainButton.Location = new System.Drawing.Point(226, 440);
-            this.TryAgainButton.Name = "TryAgainButton";
-            this.TryAgainButton.Size = new System.Drawing.Size(84, 62);
-            this.TryAgainButton.TabIndex = 3;
-            this.TryAgainButton.Text = "Try Another";
-            this.TryAgainButton.UseVisualStyleBackColor = true;
-            this.TryAgainButton.Click += new System.EventHandler(this.TryAgainButton_Click);
+            this.CircleButton.Location = new System.Drawing.Point(17, 40);
+            this.CircleButton.Name = "CircleButton";
+            this.CircleButton.Size = new System.Drawing.Size(83, 23);
+            this.CircleButton.TabIndex = 0;
+            this.CircleButton.Text = "CIRCLE";
+            this.CircleButton.UseVisualStyleBackColor = true;
+            this.CircleButton.Click += new System.EventHandler(this.CircleButton_Click);
+            // 
+            // RectangleButton
+            // 
+            this.RectangleButton.Location = new System.Drawing.Point(17, 99);
+            this.RectangleButton.Name = "RectangleButton";
+            this.RectangleButton.Size = new System.Drawing.Size(83, 23);
+            this.RectangleButton.TabIndex = 2;
+            this.RectangleButton.Text = "RECTANGLE";
+            this.RectangleButton.UseVisualStyleBackColor = true;
+            this.RectangleButton.Click += new System.EventHandler(this.RectangleButton_Click);
+            // 
+            // ThreeDGroupBx
+            // 
+            this.ThreeDGroupBx.BackColor = System.Drawing.Color.FloralWhite;
+            this.ThreeDGroupBx.Controls.Add(this.CubeButton);
+            this.ThreeDGroupBx.Controls.Add(this.SphereButton);
+            this.ThreeDGroupBx.Controls.Add(this.CylinderButton);
+            this.ThreeDGroupBx.Location = new System.Drawing.Point(174, 19);
+            this.ThreeDGroupBx.Name = "ThreeDGroupBx";
+            this.ThreeDGroupBx.Size = new System.Drawing.Size(137, 143);
+            this.ThreeDGroupBx.TabIndex = 7;
+            this.ThreeDGroupBx.TabStop = false;
+            this.ThreeDGroupBx.Text = "Three dimesional shapes";
+            // 
+            // CubeButton
+            // 
+            this.CubeButton.Location = new System.Drawing.Point(16, 69);
+            this.CubeButton.Name = "CubeButton";
+            this.CubeButton.Size = new System.Drawing.Size(83, 23);
+            this.CubeButton.TabIndex = 4;
+            this.CubeButton.Text = "CUBE";
+            this.CubeButton.UseVisualStyleBackColor = true;
+            this.CubeButton.Click += new System.EventHandler(this.CubeButton_Click);
+            // 
+            // SphereButton
+            // 
+            this.SphereButton.Location = new System.Drawing.Point(16, 40);
+            this.SphereButton.Name = "SphereButton";
+            this.SphereButton.Size = new System.Drawing.Size(83, 23);
+            this.SphereButton.TabIndex = 3;
+            this.SphereButton.Text = "SPHERE";
+            this.SphereButton.UseVisualStyleBackColor = true;
+            this.SphereButton.Click += new System.EventHandler(this.SphereButton_Click);
+            // 
+            // CylinderButton
+            // 
+            this.CylinderButton.Location = new System.Drawing.Point(16, 99);
+            this.CylinderButton.Name = "CylinderButton";
+            this.CylinderButton.Size = new System.Drawing.Size(83, 23);
+            this.CylinderButton.TabIndex = 5;
+            this.CylinderButton.Text = "CYLINDER";
+            this.CylinderButton.UseVisualStyleBackColor = true;
+            this.CylinderButton.Click += new System.EventHandler(this.CylinderButton_Click);
             // 
             // ShapePictureBx
             // 
@@ -396,9 +397,20 @@
             this.ShapePictureBx.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ShapePictureBx.Location = new System.Drawing.Point(467, 114);
             this.ShapePictureBx.Name = "ShapePictureBx";
-            this.ShapePictureBx.Size = new System.Drawing.Size(677, 382);
+            this.ShapePictureBx.Size = new System.Drawing.Size(677, 352);
+            this.ShapePictureBx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ShapePictureBx.TabIndex = 3;
             this.ShapePictureBx.TabStop = false;
+            // 
+            // DescriptionLabel
+            // 
+            this.DescriptionLabel.BackColor = System.Drawing.Color.White;
+            this.DescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(467, 476);
+            this.DescriptionLabel.Name = "DescriptionLabel";
+            this.DescriptionLabel.Size = new System.Drawing.Size(677, 152);
+            this.DescriptionLabel.TabIndex = 4;
             // 
             // ScottSchumacher_Prog_5
             // 
@@ -406,6 +418,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
             this.ClientSize = new System.Drawing.Size(1356, 625);
+            this.Controls.Add(this.DescriptionLabel);
             this.Controls.Add(this.ShapePictureBx);
             this.Controls.Add(this.UserInputGrpBx);
             this.Controls.Add(this.WelcomeInstructLabel);
@@ -413,14 +426,14 @@
             this.Text = "Scott Schumacher Program 5";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.UserInputGrpBx.ResumeLayout(false);
-            this.TwoDGroupBox.ResumeLayout(false);
-            this.ThreeDGroupBx.ResumeLayout(false);
-            this.PointCoordsGrpBx.ResumeLayout(false);
-            this.PointCoordsGrpBx.PerformLayout();
+            this.step2GrpBx.ResumeLayout(false);
             this.paremeterGrpBx.ResumeLayout(false);
             this.paremeterGrpBx.PerformLayout();
+            this.PointCoordsGrpBx.ResumeLayout(false);
+            this.PointCoordsGrpBx.PerformLayout();
             this.step1GrpBx.ResumeLayout(false);
-            this.step2GrpBx.ResumeLayout(false);
+            this.TwoDGroupBox.ResumeLayout(false);
+            this.ThreeDGroupBx.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ShapePictureBx)).EndInit();
             this.ResumeLayout(false);
 
@@ -461,6 +474,7 @@
         private System.Windows.Forms.Button DrawButton;
         private System.Windows.Forms.Button TryAgainButton;
         private System.Windows.Forms.PictureBox ShapePictureBx;
+        private System.Windows.Forms.Label DescriptionLabel;
     }
 }
 

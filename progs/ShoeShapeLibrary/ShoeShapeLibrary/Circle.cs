@@ -61,7 +61,7 @@ namespace ShoeShapeLibrary
         // Return a string representation of the circle
         public override string ToString()
         {
-            return " is centered at " + center + "and has a radius of " + radius + ".\n" +
+            return " is centered at " + center + " and has a radius of " + radius + ".\n" +
                 "Its area is " + Area() + " and its circumference is " + Circumference() + ".\n";
         }
 
