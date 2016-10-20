@@ -60,6 +60,7 @@
             this.step1GrpBx = new System.Windows.Forms.GroupBox();
             this.step2GrpBx = new System.Windows.Forms.GroupBox();
             this.DrawButton = new System.Windows.Forms.Button();
+            this.TryAgainButton = new System.Windows.Forms.Button();
             this.UserInputGrpBx.SuspendLayout();
             this.TwoDGroupBox.SuspendLayout();
             this.ThreeDGroupBx.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             this.UserInputGrpBx.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.UserInputGrpBx.BackColor = System.Drawing.Color.Khaki;
+            this.UserInputGrpBx.Controls.Add(this.TryAgainButton);
             this.UserInputGrpBx.Controls.Add(this.DrawButton);
             this.UserInputGrpBx.Controls.Add(this.step2GrpBx);
             this.UserInputGrpBx.Controls.Add(this.step1GrpBx);
@@ -368,12 +370,23 @@
             // 
             // DrawButton
             // 
-            this.DrawButton.Location = new System.Drawing.Point(96, 440);
+            this.DrawButton.Location = new System.Drawing.Point(58, 440);
             this.DrawButton.Name = "DrawButton";
             this.DrawButton.Size = new System.Drawing.Size(125, 62);
             this.DrawButton.TabIndex = 2;
             this.DrawButton.Text = "Draw your shape";
             this.DrawButton.UseVisualStyleBackColor = true;
+            this.DrawButton.Click += new System.EventHandler(this.DrawButton_Click);
+            // 
+            // TryAgainButton
+            // 
+            this.TryAgainButton.Location = new System.Drawing.Point(226, 440);
+            this.TryAgainButton.Name = "TryAgainButton";
+            this.TryAgainButton.Size = new System.Drawing.Size(84, 62);
+            this.TryAgainButton.TabIndex = 3;
+            this.TryAgainButton.Text = "Try Another";
+            this.TryAgainButton.UseVisualStyleBackColor = true;
+            this.TryAgainButton.Click += new System.EventHandler(this.TryAgainButton_Click);
             // 
             // ScottSchumacher_Prog_5
             // 
@@ -431,6 +444,7 @@
         private System.Windows.Forms.Label zLabel;
         private System.Windows.Forms.GroupBox step1GrpBx;
         private System.Windows.Forms.Button DrawButton;
+        private System.Windows.Forms.Button TryAgainButton;
     }
 }
 

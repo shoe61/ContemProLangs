@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoeShapeLibrary
 {
-    public class Rectangle : TwoDimensionalShapes // Inherits from TwoDimensionalShapes
+    public class SRectangle : TwoDimensionalShapes // Inherits from TwoDimensionalShapes
     {
         Point llhc, lrhc, urhc, ulhc;   // lower left hand corner, lower right hand corner, 
         // upper right hand corner, upper left hand corner.
@@ -14,17 +14,16 @@ namespace ShoeShapeLibrary
         string namu;
 
         // default constructor
-        Rectangle()
+        SRectangle()
         {
             // implicit call to point constructor
         }
 
         // constructor: define square by specifying lower left corner and side length
-        public Rectangle( string namevalue, int xvalue, int yvalue, int lengthvalue, int widthvalue)
+        public SRectangle(int xvalue, int yvalue, int lengthvalue, int widthvalue)
         {
             // knowing the coordinates of the lower left corner, pro-
             // cede counterclockwise from lower left and instantiate the corners
-            namu = namevalue;
             llhc = new Point(xvalue, yvalue);
             Length = lengthvalue;   // using property Side
             Width = widthvalue;     // using property Width
@@ -89,7 +88,7 @@ namespace ShoeShapeLibrary
         {
             get
             {
-                return namu;
+                return "Rectangle";
             }
         }
     }

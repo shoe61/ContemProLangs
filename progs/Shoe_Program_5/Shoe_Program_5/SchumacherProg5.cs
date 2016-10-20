@@ -129,6 +129,74 @@ namespace Shoe_Program_5
             CubeButton.Visible = false;
         }
 
+        private void DrawButton_Click(object sender, EventArgs e)
+        {
+            if(CircleButton.Visible)
+            {
+                Circle bob = new Circle(double.Parse(radiusTxtBx.Text), int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), 0);
+                string output = bob.Name + " " + bob + "\n";
+                MessageBox.Show(output);
+            }
+
+            if(SquareButton.Visible)
+            {
+                Square lucy = new Square(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(sideTxtBx.Text));
+                string output = lucy.Name + " " + lucy + "\n";
+                MessageBox.Show(output);
+            }
+
+            if(RectangleButton.Visible)
+            {
+                SRectangle fred = new SRectangle(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(lengthTxtBx.Text), int.Parse(widthTxtBx.Text));
+                string output = fred.Name + " " + fred + "\n";
+                MessageBox.Show(output);
+            }
+
+            if(SphereButton.Visible)
+            {
+                Sphere heather = new Sphere(int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), double.Parse(radiusTxtBx.Text));
+                string output = heather.Name + " " + heather + "\n";
+                MessageBox.Show(output);
+            }
+
+            if(CubeButton.Visible)
+            {
+                //pass
+            }
+
+            if(CylinderButton.Visible)
+            {
+                Cylinder felix = new Cylinder(double.Parse(radiusTxtBx.Text), int.Parse(xTextBox.Text), int.Parse(yTextBx.Text), int.Parse(zTextBx.Text), double.Parse(heightTxtBx.Text));
+                string output = felix.Name + " " + felix + "\n";
+                MessageBox.Show(output);
+            }
+
+        }
+
+        private void TryAgainButton_Click(object sender, EventArgs e)
+        {
+            radiusLabel.Visible = true;
+            radiusTxtBx.Visible = true;
+            sideLabel.Visible = true;
+            sideTxtBx.Visible = true;
+            widthLabel.Visible = true;
+            widthTxtBx.Visible = true;
+            lengthLabel.Visible = true;
+            widthTxtBx.Visible = true;
+            lengthLabel.Visible = true;
+            lengthTxtBx.Visible = true;
+            heightLabel.Visible = true;
+            heightTxtBx.Visible = true;
+            zLabel.Visible = true;
+            zTextBx.Visible = true;
+            CircleButton.Visible = true;
+            SquareButton.Visible = true;
+            RectangleButton.Visible = true;
+            SphereButton.Visible = true;
+            CubeButton.Visible = true;
+            CylinderButton.Visible = true;
+        }
+
         
 
 
