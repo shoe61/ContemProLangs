@@ -7,53 +7,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace Shoe_Program_7
 {
     public partial class MedicalSupplies : Form
     {
+        FileStream input;
+        StreamReader fileReader;
+        
+        
+        // parameterless constructor
         public MedicalSupplies()
         {
             InitializeComponent();
         }
-
-        // Create a dental forms window
-        private void dentalFormToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create a new child; assign this form as its parent; display the child
-            DentalForm newMDIChild = new DentalForm();
-            newMDIChild.MdiParent = this;
-            newMDIChild.Show();
-        }
-
-        // Create a medical forms window
-        private void medicalFormToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Create a new child; assign this form as its parent; display the child
-            FootForm newMDIChild = new FootForm();
-            newMDIChild.MdiParent = this;
-            newMDIChild.Show();
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LayoutMdi(MdiLayout.Cascade);
+            // Create Dialog Box to open file
+            DialogResult result;
+            string workFile;
+            
+            using(OpenFileDialog topOpenFileDialog = new OpenFileDialog())
+            {
+                result = topOpenFileDialog.ShowDialog();
+                workFile = topOpenFileDialog.FileName;
+            }
+
+            if(result == DialogResult.OK)
+            {
+                // display error if invalid filename
+                if(string.IsNullOrEmpty(workFile))
+                {
+                    MessageBox.Show("Invalid file name.", "Error", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // create filestream object to get read access
+                    input = new FileStream(workFile, FileMode.Open, FileAccess.Read);
+                    fileReader = new StreamReader(input);
+                }
+
+            }
         }
 
-        private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.LayoutMdi(MdiLayout.TileHorizontal);
+            try
+            {
+                fileReader.Close(); // close streamreader and underlying file
+            }
+            catch
+            {
+                // if can't close file, notify
+                MessageBox.Show("Error: cannot close file.", "Error", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Application.Exit();
         }
 
-        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.LayoutMdi(MdiLayout.TileVertical);
-        }
+
     }
 }

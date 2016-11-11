@@ -1,5 +1,5 @@
 ﻿// NAME:  Dr. Stringfellow and ???
-// Homework 3 - 10 points        DUE:  Wednesday, Sept. 24, 2014
+// Homework 3 - 10 points        DUE:  Thursday, Oct. 4, 2016
 // INSTRUCTIONS:  You are to draw a diagram representing the 
 //    inheritance tree.  You are to fill in ALL the ??? in 
 //    this file demonstrating you understand polymophism. 

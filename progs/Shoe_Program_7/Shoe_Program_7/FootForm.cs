@@ -17,17 +17,7 @@ namespace Shoe_Program_7
             InitializeComponent();
         }
 
-        // This method opens a file when the file:open menu is clicked
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (FootOpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                System.IO.StreamReader fsr = new
-                    System.IO.StreamReader(FootOpenFileDialog.FileName);
-                MessageBox.Show(fsr.ReadToEnd());
-                fsr.Close();
-            }
-        }
+        
 
 
 
