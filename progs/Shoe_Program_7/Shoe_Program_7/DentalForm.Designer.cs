@@ -28,20 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.recordTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // recordTextBox
+            // 
+            this.recordTextBox.Location = new System.Drawing.Point(1, 2);
+            this.recordTextBox.MaximumSize = new System.Drawing.Size(575, 250);
+            this.recordTextBox.MinimumSize = new System.Drawing.Size(575, 250);
+            this.recordTextBox.Name = "recordTextBox";
+            this.recordTextBox.Size = new System.Drawing.Size(575, 250);
+            this.recordTextBox.TabIndex = 0;
             // 
             // DentalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 261);
+            this.Controls.Add(this.recordTextBox);
             this.Name = "DentalForm";
             this.Text = "Dental Supplies";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox recordTextBox;
 
     }
 }

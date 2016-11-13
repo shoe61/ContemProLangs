@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record.cs" />
     <EmbeddedResource Include="DentalForm.resx">
       <DependentUpon>DentalForm.cs</DependentUpon>
     </EmbeddedResource>
