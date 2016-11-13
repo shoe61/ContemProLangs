@@ -9,12 +9,20 @@ namespace Shoe_Program_7
     [Serializable]
     public class Record
     {
+        private int id, qtyReq, qty;
+        private string name, practice;
+
         // default constructor
-        public Record() { }
-       
+        public Record() : this(0, "", 0, 0, "") { }
 
         // parameterized constructor
-        public Record(int id, string name, int qtyReq, int qty, string practice) { }
+        public Record(int idValue, string nameValue, int qtyReqValue, int qtyValue, string practiceValue)
+        {
+            id = idValue;
+            name = nameValue;
+            qtyReq = qtyReqValue;
+            qty = qtyValue;        
+        }
        
         //properties
         public int ID

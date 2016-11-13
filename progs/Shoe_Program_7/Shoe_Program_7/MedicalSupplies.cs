@@ -8,25 +8,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 
 namespace Shoe_Program_7
 {
     public partial class MedicalSupplies : Form
     {
-        FileStream input;
-        StreamReader fileReader;
-        
+        FileStream input; // stream for reading from file
+
+        // object for deserializing records
+        BinaryFormatter fileReader = new BinaryFormatter();
+
+//*****************************************************************************
         
         // parameterless constructor
         public MedicalSupplies()
         {
             InitializeComponent();
         }
+
+//*****************************************************************************
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+//*****************************************************************************
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -52,7 +62,7 @@ namespace Shoe_Program_7
                 {
                     // create filestream object to get read access
                     input = new FileStream(workFile, FileMode.Open, FileAccess.Read);
-                    fileReader = new StreamReader(input);
+                    
 
                     if (workFile.Contains("ental") || workFile.Contains("Lake"))
                     {
@@ -69,34 +79,26 @@ namespace Shoe_Program_7
                         PickensFoot.Show();
                     }
 
-                    // Now, read the file line by line, each line becoming a record- book has it in a try block
-                    
-                    // First, go to the beginning of the file
-                    input.Seek(0, SeekOrigin.Begin);
-                    
-                    // Then, while(true) get the next record in the file
-                    while (true)
+                    // deserialize and display in text box
+                    try
                     {
-                        // read a line
-                        string record = fileReader.ReadLine();
+                        // get next Record from file
+                        Record newRec = (Record)fileReader.Deserialize(input);
 
-                        // Have an exit plan: (if record == null)
-                        if (record == null)
-                        {
-                            return;
-                        }
+                        // store Record values in temporary string array
+                        var values = new string[] { newRec.ID.ToString(), newRec.Name.ToString(), 
+                            newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
 
-                        // Parse the input; comma separated fields
-                        string[] inputFields = record.Split(',');
+                        // try to display this crap in the text box
+                        textBox1.AppendText("int.Parse(values[0])");
+                        
 
-                        // Create a Record object
-                        Record newRec = new Record(int.Parse(inputFields[0]), inputFields[1],
-                            int.Parse(inputFields[2]), int.Parse(inputFields[3]), inputFields[4]);
-
-                        // ... and display the records in the TextBox of the appropriate child window.
-                        textBox1.AppendText("{newRec.ID}\t" + "{newRec.Name}\t" + "{newRec.QtyReq}\t" + "{newRec.Qty}\t" + "{newRec.Practice}{Environment.NewLine}");
                     }
 
+                    catch(IOException)
+                    {
+                        MessageBox.Show("oops.");
+                    }
                 }
             }
         }
@@ -108,7 +110,7 @@ namespace Shoe_Program_7
         {
             try
             {
-                fileReader.Close(); // close streamreader and underlying file
+                //fileReader.Close(); // close streamreader and underlying file
             }
             catch
             {
