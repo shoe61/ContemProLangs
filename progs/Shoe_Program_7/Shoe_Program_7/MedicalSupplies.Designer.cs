@@ -153,6 +153,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MedicalSupplies";
             this.Text = "Shoe\'s Hoof and Mouth Medical Supplies";
+            this.Load += new System.EventHandler(this.MedicalSupplies_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -21,6 +21,8 @@ namespace Shoe_Program_7
         // object for deserializing records
         BinaryFormatter fileReader = new BinaryFormatter();
 
+        BinaryFormatter reader = new BinaryFormatter();
+
 //*****************************************************************************
         
         // parameterless constructor
@@ -89,8 +91,8 @@ namespace Shoe_Program_7
                         var values = new string[] { newRec.ID.ToString(), newRec.Name.ToString(), 
                             newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
 
-                        // try to display this crap in the text box
-                        textBox1.AppendText("int.Parse(values[0])");
+                        // display in the text box
+                        textBox1.AppendText(values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
                         
 
                     }
@@ -104,7 +106,7 @@ namespace Shoe_Program_7
         }
 
 
-
+//*************************************************************************************************************
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -119,6 +121,25 @@ namespace Shoe_Program_7
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             Application.Exit();
+        }
+
+
+        //**************************************************************************************
+
+
+        private void MedicalSupplies_Load(object sender, EventArgs e)
+        { 
+            FileStream output = new FileStream("LakeDentalClinic.inv", 
+                FileMode.OpenOrCreate, FileAccess.Write);
+
+            Record rex = new Record();
+            rex.ID = 3570;
+            rex.Name = "toothbrush";
+            rex.QtyReq = 100;
+            rex.Qty = 61;
+            rex.Practice = "Lake Dental Clinic";
+
+            reader.Serialize(output, rex);
         }
 
 

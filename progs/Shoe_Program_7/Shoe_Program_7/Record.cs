@@ -27,32 +27,32 @@ namespace Shoe_Program_7
         //properties
         public int ID
         {
-            get { return ID; }
-            set { ID = value; }
+            get { return id; }
+            set { id = value; }
         }
 
         public string Name
         {
-            get { return Name; }
-            set { Name = value; }
+            get { return name; }
+            set { name = value; }
         }
 
         public string Practice
         {
-            get { return Practice; }
-            set { Practice = value; }
+            get { return practice; }
+            set { practice = value; }
         }
         
         public int QtyReq
         {
-            get { return QtyReq; }
-            set { QtyReq = value; }
+            get { return qtyReq; }
+            set { qtyReq = value; }
         }
 
         public int Qty
         {
-            get { return Qty; }
-            set { Qty = value; }
+            get { return qty; }
+            set { qty = value; }
         }
     }
 }
