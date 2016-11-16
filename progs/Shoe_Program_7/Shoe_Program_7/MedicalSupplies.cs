@@ -23,6 +23,10 @@ namespace Shoe_Program_7
 
         BinaryFormatter reader = new BinaryFormatter();
 
+        private bool dentalOpen = false;
+        private bool footOpen = false;
+        private bool insertFormOpen = false;
+
 //*****************************************************************************
         
         // parameterless constructor
@@ -44,7 +48,7 @@ namespace Shoe_Program_7
         {
             // Create Dialog Box to open file
             DialogResult result;
-            string workFile;
+            string workFile, goober;
             
             using(OpenFileDialog topOpenFileDialog = new OpenFileDialog())
             {
@@ -64,22 +68,6 @@ namespace Shoe_Program_7
                 {
                     // create filestream object to get read access
                     input = new FileStream(workFile, FileMode.Open, FileAccess.Read);
-                    
-
-                    if (workFile.Contains("ental") || workFile.Contains("Lake"))
-                    {
-                        // Create a new child Dental Form; assign this form as its parent; display the child
-                        DentalForm LakeDental = new DentalForm();
-                        LakeDental.MdiParent = this;
-                        LakeDental.Show();
-                    }
-                    if (workFile.Contains("foot") || workFile.Contains("odiatry") || workFile.Contains("Foot"))
-                    {
-                        // Create a new child Foot Form; assign this form as its parent; display the child
-                        FootForm PickensFoot = new FootForm();
-                        PickensFoot.MdiParent = this;
-                        PickensFoot.Show();
-                    }
 
                     // deserialize and display in text box
                     try
@@ -92,9 +80,11 @@ namespace Shoe_Program_7
                             newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
 
                         // display in the text box
-                        textBox1.AppendText(values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
-                        
+                        //textBox1.AppendText(values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
+                        goober = (values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
+                        //textBox1.AppendText(goober);
 
+                        open_window(workFile, goober); 
                     }
 
                     catch(IOException)
@@ -108,39 +98,67 @@ namespace Shoe_Program_7
 
 //*************************************************************************************************************
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void open_window(string workFile, string goober)
         {
-            try
+            if ((workFile.Contains("ental") || workFile.Contains("Lake")) && dentalOpen == false)
             {
-                //fileReader.Close(); // close streamreader and underlying file
+                // Create a new child Dental Form; assign this form as its parent; display the child
+                // it is automatically, and remains, the active mdi child until another supersedes it.
+                DentalForm LakeDental = new DentalForm();
+                dentalOpen = true;
+                LakeDental.MdiParent = this;
+                LakeDental.Show();
+                LakeDental.recordTextBox.AppendText(goober);
             }
-            catch
+
+            if ((workFile.Contains("foot") || workFile.Contains("odiatry") || workFile.Contains("Foot")) && footOpen == false)
             {
-                // if can't close file, notify
-                MessageBox.Show("Error: cannot close file.", "Error", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Create a new child Foot Form; assign this form as its parent; display the child
+                // it is automatically, and remains, the active mdi child until another supersedes it.
+                FootForm PickensFoot = new FootForm();
+                footOpen = true;
+                PickensFoot.MdiParent = this;
+                PickensFoot.Show();
+                PickensFoot.recordRichTextBox.AppendText(goober);
             }
-            Application.Exit();
         }
 
+//*************************************************************************************************************
 
-        //**************************************************************************************
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                this.ActiveMdiChild.Close();
+        }
+
+//*************************************************************************************************************
+
+        private void insertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(insertFormOpen == false)
+            {
+                insertNewItemForm insertForm = new insertNewItemForm();
+                insertFormOpen = true;
+                insertForm.Show();
+            }  
+        }
+
+//*************************************************************************************************************
 
 
-        private void MedicalSupplies_Load(object sender, EventArgs e)
+       /* private void MedicalSupplies_Load(object sender, EventArgs e)
         { 
-            FileStream output = new FileStream("LakeDentalClinic.inv", 
+            FileStream output = new FileStream("PickensFootClinic.inv", 
                 FileMode.OpenOrCreate, FileAccess.Write);
 
             Record rex = new Record();
-            rex.ID = 3570;
-            rex.Name = "toothbrush";
-            rex.QtyReq = 100;
-            rex.Qty = 61;
-            rex.Practice = "Lake Dental Clinic";
+            rex.ID = 0440;
+            rex.Name = "arch support";
+            rex.QtyReq = 60;
+            rex.Qty = 43;
+            rex.Practice = "Pickens Foot Clinic";
 
             reader.Serialize(output, rex);
-        }
+        }*/
 
 
     }

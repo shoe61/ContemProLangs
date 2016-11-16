@@ -9,8 +9,12 @@ namespace Shoe_Program_7
     [Serializable]
     public class Record
     {
-        private int id, qtyReq, qty;
-        private string name, practice;
+        // these variables must be declared in Record order. It matters!
+        private int id;
+        private string name;
+        private int qtyReq;
+        private int qty;
+        private string practice;
 
         // default constructor
         public Record() : this(0, "", 0, 0, "") { }

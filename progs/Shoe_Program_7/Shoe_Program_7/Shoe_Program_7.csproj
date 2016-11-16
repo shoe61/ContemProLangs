@@ -57,6 +57,12 @@
     <Compile Include="FootForm.Designer.cs">
       <DependentUpon>FootForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="insertNewItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insertNewItemForm.Designer.cs">
+      <DependentUpon>insertNewItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicalSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FootForm.resx">
       <DependentUpon>FootForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insertNewItemForm.resx">
+      <DependentUpon>insertNewItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalSupplies.resx">
       <DependentUpon>MedicalSupplies.cs</DependentUpon>

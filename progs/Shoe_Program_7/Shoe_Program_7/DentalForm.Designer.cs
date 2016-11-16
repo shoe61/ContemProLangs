@@ -37,7 +37,7 @@
             this.recordTextBox.MaximumSize = new System.Drawing.Size(575, 250);
             this.recordTextBox.MinimumSize = new System.Drawing.Size(575, 250);
             this.recordTextBox.Name = "recordTextBox";
-            this.recordTextBox.Size = new System.Drawing.Size(575, 250);
+            this.recordTextBox.Size = new System.Drawing.Size(575, 20);
             this.recordTextBox.TabIndex = 0;
             // 
             // DentalForm
@@ -55,7 +55,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox recordTextBox;
+        public System.Windows.Forms.TextBox recordTextBox;
+
 
     }
 }
