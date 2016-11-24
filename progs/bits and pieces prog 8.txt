@@ -1,0 +1,17 @@
+private void imagePanel_Paint(object sender, PaintEventArgs e)
+        {
+            using(Graphics grafix = this.imagePanel.CreateGraphics())
+            {
+                Graphics g = e.Graphics;
+                SolidBrush shoebrush = new SolidBrush(Color.Red);
+                Pen shoepen = new Pen(Color.Black);
+
+                g.DrawRectangle(shoepen, 50, 50, 200, 50);
+                g.FillRectangle(shoebrush, 50, 50, 200, 50);
+
+                g.DrawEllipse(shoepen, 100, 100, 200, 50);
+                g.FillEllipse(shoebrush, 200, 200, 200, 50);
+
+
+            }
+        }
