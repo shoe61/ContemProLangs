@@ -16,78 +16,103 @@ namespace Shoe_Program_7
 {
     public partial class MedicalSupplies : Form
     {
-        FileStream input; // stream for reading from file
+        private FileStream input; // stream for reading from file
+
 
         // object for deserializing records
-        BinaryFormatter fileReader = new BinaryFormatter();
+        private BinaryFormatter fileReader = new BinaryFormatter();
 
         BinaryFormatter reader = new BinaryFormatter();
+
+        public static string workFile, goober;
+
+
+        public static string[] values;
+
+
 
         private bool dentalOpen = false;
         private bool footOpen = false;
         private bool insertFormOpen = false;
 
-//*****************************************************************************
-        
+        //int* id_Ptr, qtyReq_Ptr, qty_Ptr;
+
+
+        //*****************************************************************************
+
         // parameterless constructor
         public MedicalSupplies()
         {
             InitializeComponent();
         }
 
-//*****************************************************************************
+        //*****************************************************************************
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-//*****************************************************************************
+        //*****************************************************************************
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        public void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Create Dialog Box to open file
             DialogResult result;
-            string workFile, goober;
-            
-            using(OpenFileDialog topOpenFileDialog = new OpenFileDialog())
+
+            using (OpenFileDialog topOpenFileDialog = new OpenFileDialog())
             {
                 result = topOpenFileDialog.ShowDialog();
                 workFile = topOpenFileDialog.FileName;
             }
 
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 // display error if invalid filename
-                if(string.IsNullOrEmpty(workFile))
+                if (string.IsNullOrEmpty(workFile))
                 {
-                    MessageBox.Show("Invalid file name.", "Error", 
+                    MessageBox.Show("Invalid file name.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     // create filestream object to get read access
-                    input = new FileStream(workFile, FileMode.Open, FileAccess.Read);
+                    input = new FileStream(workFile, FileMode.Open, FileAccess.ReadWrite);
 
+                    // go to beginning of file
+                    input.Seek(0, SeekOrigin.Begin);
+
+                    //make a list of the string arrays
+                    List<string[]> theList = new List<string[]>();
+
+                    goober = "";
+                    
                     // deserialize and display in text box
                     try
                     {
-                        // get next Record from file
-                        Record newRec = (Record)fileReader.Deserialize(input);
+                        // iterate over filestream object input, opening a record and appending it to the list
+                        while(input.Position < input.Length)
+                        {
+                            // get next Record from file
+                            Record newRec = (Record)fileReader.Deserialize(input);
+                            if (newRec == null) continue;
 
-                        // store Record values in temporary string array
-                        var values = new string[] { newRec.ID.ToString(), newRec.Name.ToString(), 
+                            // store Record values in temporary string array
+                            values = new string[] { newRec.ID.ToString(), newRec.Name.ToString(), 
                             newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
 
-                        // display in the text box
-                        //textBox1.AppendText(values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
-                        goober = (values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4]);
-                        //textBox1.AppendText(goober);
+                            // add current iteration of values to theList
+                            theList.Add(values);
 
-                        open_window(workFile, goober); 
+                            goober += (values[0] + "\t" + values[1] + "\t" + values[2] + "\t" + values[3] + "\t" + values[4] + "\r\n");
+
+                        }
+                        
+                        input.Close();
+                        open_window(workFile, goober);
                     }
 
-                    catch(IOException)
+                    catch (IOException)
                     {
                         MessageBox.Show("oops.");
                     }
@@ -96,7 +121,7 @@ namespace Shoe_Program_7
         }
 
 
-//*************************************************************************************************************
+        //*************************************************************************************************************
 
         private void open_window(string workFile, string goober)
         {
@@ -123,43 +148,58 @@ namespace Shoe_Program_7
             }
         }
 
-//*************************************************************************************************************
+        //*************************************************************************************************************
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                this.ActiveMdiChild.Close();
+            this.ActiveMdiChild.Close();
         }
 
-//*************************************************************************************************************
+        //*************************************************************************************************************
 
         private void insertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(insertFormOpen == false)
+            if (insertFormOpen == false)
             {
                 insertNewItemForm insertForm = new insertNewItemForm();
                 insertFormOpen = true;
                 insertForm.Show();
-            }  
+
+            }
         }
 
-//*************************************************************************************************************
+        //*************************************************************************************************************
 
 
-       /* private void MedicalSupplies_Load(object sender, EventArgs e)
-        { 
-            FileStream output = new FileStream("PickensFootClinic.inv", 
-                FileMode.OpenOrCreate, FileAccess.Write);
+
+        //*************************************************************************************************************
+
+       /*
+       
+        private void MedicalSupplies_Load_1(object sender, EventArgs e)
+        {
+            FileStream output = new FileStream("LakeDentalClinic.inv",
+               FileMode.OpenOrCreate, FileAccess.Write);
 
             Record rex = new Record();
-            rex.ID = 0440;
-            rex.Name = "arch support";
-            rex.QtyReq = 60;
-            rex.Qty = 43;
-            rex.Practice = "Pickens Foot Clinic";
+            rex.ID = 0881;
+            rex.Name = "fake tooth";
+            rex.QtyReq = 30;
+            rex.Qty = 23;
+            rex.Practice = "Lake Dental Clinic";
 
             reader.Serialize(output, rex);
-        }*/
+        }
+        
+        */
 
+
+        //*************************************************************************************************************
+
+
+      
+       
+       
 
     }
 }

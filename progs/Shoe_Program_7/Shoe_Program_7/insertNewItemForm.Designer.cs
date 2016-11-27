@@ -161,6 +161,7 @@
             this.InsertButton.TabIndex = 1;
             this.InsertButton.Text = "Insert new item";
             this.InsertButton.UseVisualStyleBackColor = true;
+            this.InsertButton.Click += new System.EventHandler(this.InsertButton_Click);
             // 
             // cancelButton
             // 
@@ -170,6 +171,7 @@
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // insertNewItemForm
             // 
@@ -181,8 +183,12 @@
             this.Controls.Add(this.itemInfoGrpBx);
             this.Name = "insertNewItemForm";
             this.Text = "Add new item to inventory";
+            this.Controls.SetChildIndex(this.itemInfoGrpBx, 0);
+            this.Controls.SetChildIndex(this.InsertButton, 0);
+            this.Controls.SetChildIndex(this.cancelButton, 0);
             this.itemInfoGrpBx.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -33,11 +33,13 @@
             // 
             // recordTextBox
             // 
+            this.recordTextBox.AcceptsReturn = true;
             this.recordTextBox.Location = new System.Drawing.Point(1, 2);
             this.recordTextBox.MaximumSize = new System.Drawing.Size(575, 250);
             this.recordTextBox.MinimumSize = new System.Drawing.Size(575, 250);
+            this.recordTextBox.Multiline = true;
             this.recordTextBox.Name = "recordTextBox";
-            this.recordTextBox.Size = new System.Drawing.Size(575, 20);
+            this.recordTextBox.Size = new System.Drawing.Size(575, 250);
             this.recordTextBox.TabIndex = 0;
             // 
             // DentalForm
