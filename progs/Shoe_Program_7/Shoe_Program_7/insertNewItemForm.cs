@@ -16,7 +16,7 @@ namespace Shoe_Program_7
     public partial class insertNewItemForm : MedicalSupplies
     {
 
-        string[] appendo;
+        
 
         BinaryFormatter writer = new BinaryFormatter();
 
@@ -54,9 +54,24 @@ namespace Shoe_Program_7
 
             // create filestream object to get write access
             FileStream output = new FileStream(workFile, FileMode.Append, FileAccess.Write);
-            writer.Serialize(output, temp);
-            output.Close();
 
+            // serialize the output to file
+            writer.Serialize(output, temp);
+
+            // write the new record to the child form's list box
+            // by updating theList in MedicalSupplies
+
+            /*
+            values = new string[] { temp.ID.ToString(), temp.Name.ToString(), 
+                            temp.QtyReq.ToString(), temp.Qty.ToString(), temp.Practice.ToString() };
+
+            MedicalSupplies.theList.Add(values);
+            */
+            
+           
+            
+            //Close filestream object
+            output.Close();
             this.Close();
         }
 

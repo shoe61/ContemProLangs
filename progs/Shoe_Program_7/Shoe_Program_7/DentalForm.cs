@@ -12,17 +12,21 @@ namespace Shoe_Program_7
 {
     public partial class DentalForm : Form
     {
+
+        private static string[] newValue;
+
         public DentalForm()
         {
             InitializeComponent();
+
+            for (int i = 0; i < MedicalSupplies.theList.Count; i++)
+            {
+                inventoryListBox.Items.Add(MedicalSupplies.theList[i][0] + "\r\t" 
+                    + MedicalSupplies.theList[i][1] + "\r\t" 
+                    + MedicalSupplies.theList[i][2] + "\r\t"
+                    + MedicalSupplies.theList[i][3] + "\r\t"  
+                    + MedicalSupplies.theList[i][4]);
+            }
         }
-
-        
-        
-
-
-
-
-
     }
 }

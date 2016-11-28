@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.recordRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.inventoryListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // recordRichTextBox
+            // inventoryListBox
             // 
-            this.recordRichTextBox.Location = new System.Drawing.Point(1, 1);
-            this.recordRichTextBox.Name = "recordRichTextBox";
-            this.recordRichTextBox.Size = new System.Drawing.Size(553, 124);
-            this.recordRichTextBox.TabIndex = 0;
-            this.recordRichTextBox.Text = "";
+            this.inventoryListBox.ColumnWidth = 600;
+            this.inventoryListBox.FormattingEnabled = true;
+            this.inventoryListBox.Location = new System.Drawing.Point(2, 12);
+            this.inventoryListBox.MultiColumn = true;
+            this.inventoryListBox.Name = "inventoryListBox";
+            this.inventoryListBox.Size = new System.Drawing.Size(552, 199);
+            this.inventoryListBox.TabIndex = 0;
             // 
             // FootForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 261);
-            this.Controls.Add(this.recordRichTextBox);
+            this.Controls.Add(this.inventoryListBox);
             this.Name = "FootForm";
             this.Text = "Podiatric Supplies";
             this.ResumeLayout(false);
@@ -53,7 +55,8 @@
 
         #endregion
 
-        public System.Windows.Forms.RichTextBox recordRichTextBox;
+        private System.Windows.Forms.ListBox inventoryListBox;
+
 
 
 

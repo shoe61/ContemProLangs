@@ -28,36 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.recordTextBox = new System.Windows.Forms.TextBox();
+            this.inventoryListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // recordTextBox
+            // inventoryListBox
             // 
-            this.recordTextBox.AcceptsReturn = true;
-            this.recordTextBox.Location = new System.Drawing.Point(1, 2);
-            this.recordTextBox.MaximumSize = new System.Drawing.Size(575, 250);
-            this.recordTextBox.MinimumSize = new System.Drawing.Size(575, 250);
-            this.recordTextBox.Multiline = true;
-            this.recordTextBox.Name = "recordTextBox";
-            this.recordTextBox.Size = new System.Drawing.Size(575, 250);
-            this.recordTextBox.TabIndex = 0;
+            this.inventoryListBox.ColumnWidth = 500;
+            this.inventoryListBox.FormattingEnabled = true;
+            this.inventoryListBox.HorizontalScrollbar = true;
+            this.inventoryListBox.Location = new System.Drawing.Point(0, 0);
+            this.inventoryListBox.MultiColumn = true;
+            this.inventoryListBox.Name = "inventoryListBox";
+            this.inventoryListBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.inventoryListBox.Size = new System.Drawing.Size(574, 225);
+            this.inventoryListBox.TabIndex = 0;
             // 
             // DentalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 261);
-            this.Controls.Add(this.recordTextBox);
+            this.Controls.Add(this.inventoryListBox);
             this.Name = "DentalForm";
             this.Text = "Dental Supplies";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        public System.Windows.Forms.TextBox recordTextBox;
+        public System.Windows.Forms.ListBox inventoryListBox;
+
 
 
     }
