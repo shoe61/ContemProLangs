@@ -17,42 +17,61 @@ namespace Shoe_Program_8
             InitializeComponent();
         }
 
-
-        protected override void OnPaint(PaintEventArgs e)
+        private void imagePanel_Paint_1(object sender, PaintEventArgs e)
         {
             base.OnPaint(e);
             using (Graphics grafix = this.imagePanel.CreateGraphics())
             {
+                Graphics g = e.Graphics;
                 SolidBrush shoeBrush = new SolidBrush(Color.Red);
+                SolidBrush newBrush = new SolidBrush(Color.Black);
                 Pen shoePen = new Pen(Color.Black);
+                Pen newPen = new Pen(Color.Brown);
                 Font shoeFont = new Font("Ariel", 32);
+                Font tinyFont = new Font("Ariel", 12);
+                Point duHoc = new Point(0, 350);
+                Point tief = new Point(126, 490);
 
-                grafix.DrawString("First, the required elements.", shoeFont, shoeBrush, 25, 25);
-                grafix.DrawString("Rectangles, drawn and filled:", shoeFont, shoeBrush, 25, 100);
-                grafix.DrawString("Ellipses, drawn and filled: ", shoeFont, shoeBrush, 25, 200);
-                grafix.DrawString("Now I have a problem, because I'm no artist, and Texas has ", shoeFont, shoeBrush, 25, 300);
-                grafix.DrawString("no winter to speak of... ", shoeFont, shoeBrush, 25, 400);
-                
-                grafix.DrawRectangle(shoePen, 600, 100, 200, 50);
-                grafix.FillRectangle(shoeBrush, 900, 100, 200, 50);
+                g.DrawRectangle(shoePen, 0, 350, 900, 100);
 
-                grafix.DrawEllipse(shoePen, 600, 200, 200, 50);
-                grafix.FillEllipse(shoeBrush, 900, 200, 200, 50);
+                g.DrawString("It's said that a rolling stone gathers no moss;\n A rolling snowball on the other hand..",
+                    shoeFont, shoeBrush, duHoc);
 
-                
+                g.DrawEllipse(newPen, 110, 470, 200, 65);
 
-                Point a = new Point(0,400);
-                Point b = new Point(1000, 800);
-                Point c = new Point(0, 800);
-                Point d = new Point(1000, 400);
-
-                Point[] hillPoints = {a, b, c, d};
-
-                //grafix.DrawPolygon(shoePen, hillPoints);
-                //grafix.DrawLines(shoePen, hillPoints);
+                g.DrawString("Press the Start button!", tinyFont, newBrush, tief);
             }
         }
 
+        private void startStopBtn_Click(object sender, EventArgs e)
+        {
+            // toggle the timer
+            celsTimer.Enabled = !celsTimer.Enabled;
+
+            // change the text of the button
+            if (celsTimer.Enabled) { this.startStopBtn.Text = "STOP"; }
+            else { this.startStopBtn.Text = "START";}
+        }
+
+        private void celsTimer_Tick(object sender, EventArgs e)
+        {
+            animator(j); 
+        }
+
+        int j = 0;
+
+        private void animator(int dex)
+        {
+            
+            this.imagePanel.Invalidate();
+            
+            this.imagePanel.BackgroundImage = celsList.Images[dex];
+            if(j < celsList.Images.Count - 1)
+            {
+                j++;
+            }
+            else { j = 0; }
+        }
 
 
        
