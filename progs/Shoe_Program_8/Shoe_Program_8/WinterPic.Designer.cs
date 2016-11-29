@@ -39,6 +39,7 @@
             // 
             // imagePanel
             // 
+            this.imagePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.imagePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imagePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imagePanel.Controls.Add(this.startStopBtn);
@@ -66,6 +67,9 @@
             this.celsList.Images.SetKeyName(6, "6.png");
             this.celsList.Images.SetKeyName(7, "7.png");
             this.celsList.Images.SetKeyName(8, "8.png");
+            this.celsList.Images.SetKeyName(9, "9.png");
+            this.celsList.Images.SetKeyName(10, "10.png");
+            this.celsList.Images.SetKeyName(11, "11.png");
             // 
             // startStopBtn
             // 
@@ -81,8 +85,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(1268, 559);
             this.Controls.Add(this.imagePanel);
+            this.DoubleBuffered = true;
             this.Name = "WinterPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "A Winter Scene";
