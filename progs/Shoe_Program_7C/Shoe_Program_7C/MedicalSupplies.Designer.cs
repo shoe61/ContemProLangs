@@ -51,7 +51,7 @@
             this.AboutMenu});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(514, 24);
+            this.mainMenu.Size = new System.Drawing.Size(539, 24);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 261);
+            this.ClientSize = new System.Drawing.Size(539, 291);
             this.Controls.Add(this.mainMenu);
             this.IsMdiContainer = true;
             this.Name = "MedicalSupplies";

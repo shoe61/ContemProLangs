@@ -1,4 +1,24 @@
-﻿using System;
+﻿/* Scott Schumacher
+ * Medical Supplies.cs
+ * 6 December 2016
+ * This program demonstrates MDI operations, including list boxes, menus, user controls, and 
+ * serialization. This is a simple inventory program that enables the user to display the inventories 
+ * of two different medical practices; to add new items to either inventory; to delete items; and to 
+ * edit entries. 
+ * 
+ *      The inventories are displayed on child MDI forms, which are stripped of their control 
+ * boxes. This is to preclude the user closing the form from the "x" in the upper right hand corner;
+ * the forms must only be closed by the menu click item because that initiates the file write.
+ * 
+ *      The data entry forms are launched with a specific child as their object; as a reminder to
+ * the user, the practice field is already filled in. This, I hope, would help to prevent a tired 
+ * operator from mistakenly entering or changing data for one practice when the other was intended.
+ * 
+ */
+
+//*************************************************************************************************
+ 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,21 +48,21 @@ namespace Shoe_Program_7C
         public static bool dentalOpen = false;
         public static bool footOpen = false;
 
-        //*****************************************************************************************
+        // Default Constructor********************************************************************
 
         public MedicalSupplies()
         {
             InitializeComponent();
         }
 
-        //*****************************************************************************************
+        // New: Not Implemented********************************************************************
 
         private void fileMenuNew_Click(object sender, EventArgs e)
         {
-            // will do stuff
+            // will be used to create new account
         }
 
-        //*****************************************************************************************
+        // Opens the file and the appropriate window to display the inventory**********************
 
         private void fileMenuOpen_Click(object sender, EventArgs e)
         {
@@ -83,7 +103,27 @@ namespace Shoe_Program_7C
 
         private void fileMenuExit_Click(object sender, EventArgs e)
         {
+            // First, check to see if child forms are open. If so, ask if want to save.
+            PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
+            if(child != null)
+            {
+                DialogResult notSoFast = MessageBox.Show("Do you want to save changes?", "SAVE CHANGES?",
+                MessageBoxButtons.YesNo);
+
+                if (notSoFast == DialogResult.Yes)
+                {
+                    child.writeFile();
+                    Application.Exit();
+                }
+                else // don't want to save...
+                {
+                    Application.Exit();
+                }
+            }
+
+            // if no child is open, okay to close
+            Application.Exit();
         }
 
         //*****************************************************************************************
