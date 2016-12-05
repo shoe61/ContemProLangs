@@ -17,6 +17,7 @@ namespace Shoe_Program_7C
         BinaryFormatter writer = new BinaryFormatter();
         PracticeForm child;
         private int idx;
+        string line;
 
         //*****************************************************************************************
 
@@ -45,19 +46,27 @@ namespace Shoe_Program_7C
             {
                 // get the index of the selected line
                 idx = child.inventoryListBx.SelectedIndex;
+                
+                try
+                {
+                    // read the line as a string
+                    line = child.inventoryListBx.Items[idx].ToString();
 
-                // read the line as a string
-                var line = child.inventoryListBx.Items[idx].ToString();
+                    // parse the (tab separated) string to display elements in the appropriate rich text box
+                    string[] split = line.Split('\t');
 
-                // parse the (tab separated) string to display elements in the appropriate rich text box
-                string[] split = line.Split('\t');
+                    // display the indexed elements of 'split' in the text boxes
+                    this.idRichTextBox.Text = split[0];
+                    this.nameRichTextBox.Text = split[1];
+                    this.qtyReqRichTextBox.Text = split[2];
+                    this.qtyRichTextBox.Text = split[3];
+                }
 
-
-                // display the indexed elements of 'split' in the text boxes
-                this.idRichTextBox.Text = split[0];
-                this.nameRichTextBox.Text = split[1];
-                this.qtyReqRichTextBox.Text = split[2];
-                this.qtyRichTextBox.Text = split[3];
+                catch(ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Please select a record to update.");
+                    this.Close();
+                }
             }
         }
 
@@ -73,7 +82,6 @@ namespace Shoe_Program_7C
         private void InsertButton_Click(object sender, EventArgs e)
         {
             //update the child form's table
-
             if (child != null)
             {
                 child.getUpdate(this.idRichTextBox.Text + "\t" + this.nameRichTextBox.Text + "\t" +
@@ -88,9 +96,11 @@ namespace Shoe_Program_7C
             this.qtyRichTextBox.Text = "";
         }
 
+        //*****************************************************************************************
+
         private void updateButton_Click(object sender, EventArgs e)
         {
-            // update the child form's table by deleting the current record and adding 
+            // update the child form's table by deleting the original record and adding 
             // the updated record
 
             child.getDelete(idx);

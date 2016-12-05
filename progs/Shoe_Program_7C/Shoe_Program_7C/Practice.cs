@@ -36,6 +36,8 @@ namespace Shoe_Program_7C
         {
             InitializeComponent();
             workFile = workfile;
+            // Remove the Close menu item.
+            //this.menuManager = new SystemMenuManager(this, SystemMenuManager.MenuItemState.Removed)
         }
 
         //displayInv method reads and displays records from the file*******************************
@@ -86,7 +88,15 @@ namespace Shoe_Program_7C
 
         public void getDelete(int idx)
         {
-            inventoryListBx.Items.RemoveAt(idx);
+            try 
+            {
+                inventoryListBx.Items.RemoveAt(idx);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("You must select an item to delete.");
+            }
+            
         }
 
         // writeFile is called whenever a close  or save command is issued*************************

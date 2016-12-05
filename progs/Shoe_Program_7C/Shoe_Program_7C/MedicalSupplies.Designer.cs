@@ -138,6 +138,7 @@
             this.AboutMenu.Name = "AboutMenu";
             this.AboutMenu.Size = new System.Drawing.Size(61, 20);
             this.AboutMenu.Text = "About...";
+            this.AboutMenu.Click += new System.EventHandler(this.AboutMenu_Click);
             // 
             // MedicalSupplies
             // 

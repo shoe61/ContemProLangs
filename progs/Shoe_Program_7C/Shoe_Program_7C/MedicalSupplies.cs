@@ -46,11 +46,10 @@ namespace Shoe_Program_7C
 
         private void fileMenuOpen_Click(object sender, EventArgs e)
         {
-            // open the child form
-
-            // Create Dialog Box to open file
+            // Create Dialog Box result variable 
             DialogResult result;
 
+            // Create the dialog box to get the file name
             using (OpenFileDialog topOpenFileDialog = new OpenFileDialog())
             {
                 result = topOpenFileDialog.ShowDialog();
@@ -104,13 +103,23 @@ namespace Shoe_Program_7C
         private void editMenuUpdate_Click(object sender, EventArgs e)
         {
 
+            // Identify the active child; it will be passed to the EntryForm
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
-            //create a new EntryForm, passing child and bool update = false
-            EntryForm Entry = new EntryForm(child, true);
-            Entry.Controls.RemoveAt(2); // the insert button won't be visible; update only
-            Entry.Text = "Update inventory item";
-            Entry.ShowDialog();
 
+            //create a new EntryForm, passing child and bool update = true
+            EntryForm Entry = new EntryForm(child, true);
+            
+            // This try / catch is necessary in case the user clicks "update" with no record selected.
+            try
+            {
+                Entry.Controls.RemoveAt(2); // the insert button won't be visible; update only
+                Entry.Text = "Update inventory item";
+                Entry.ShowDialog();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                // The exception is handled by the EntryForm.
+            }
         }
 
         //*****************************************************************************************
@@ -158,21 +167,37 @@ namespace Shoe_Program_7C
             }
         }
 
+        //*****************************************************************************************
+
         private void fileMenuClose_Click(object sender, EventArgs e)
         {
             // identify the active child form
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
-           
-            // call the active child form to serialize the newly edited file
-            child.writeFile();
 
-            // reset the window open boolean variable
-            if (child.Text == "Lake Dental Clinic") { dentalOpen = false; }
-            if (child.Text == "Pickens Foot Clinic") { footOpen = false; }
+            try
+            {
+                // call the active child form to serialize the newly edited file
+                child.writeFile();
 
-            // close the child form 
-            child.Close();
+                // reset the window open boolean variable
+                if (child.Text == "Lake Dental Clinic") { dentalOpen = false; }
+                if (child.Text == "Pickens Foot Clinic") { footOpen = false; }
 
+                // close the child form 
+                child.Close();
+            }
+
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("There's no file open.");
+            }
+        }
+
+        //*****************************************************************************************
+
+        private void AboutMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is a program by Scott Schumacher.");
         }
 
         //*****************************************************************************************
