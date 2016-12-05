@@ -48,6 +48,8 @@ namespace Shoe_Program_7C
         public static bool dentalOpen = false;
         public static bool footOpen = false;
 
+
+
         // Default Constructor********************************************************************
 
         public MedicalSupplies()

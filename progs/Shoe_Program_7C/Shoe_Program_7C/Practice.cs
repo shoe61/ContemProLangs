@@ -65,8 +65,8 @@ namespace Shoe_Program_7C
                             newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
 
                         // display in ListBox
-                        inventoryListBx.Items.Add(values[0].PadRight(16) + "\t" + values[1].PadRight(30)
-                            + "\t" + values[2].PadRight(16) + "\t" + values[3].PadRight(16) + "\t" + values[4]);
+                        inventoryListBx.Items.Add((values[0].PadRight(16)) + "\t" + (values[1].PadRight(30))
+                            + "\t" + (values[2].PadRight(16)) + "\t" + (values[3].PadRight(16)) + "\t" + values[4]);
                     }
                 }
 

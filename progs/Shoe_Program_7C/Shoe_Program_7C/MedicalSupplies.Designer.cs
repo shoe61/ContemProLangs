@@ -40,6 +40,7 @@
             this.editMenuUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginPassword1 = new Shoe_Program_7C.LoginPassword();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.AboutMenu});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(539, 24);
+            this.mainMenu.Size = new System.Drawing.Size(1267, 24);
             this.mainMenu.TabIndex = 1;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -70,35 +71,35 @@
             // fileMenuNew
             // 
             this.fileMenuNew.Name = "fileMenuNew";
-            this.fileMenuNew.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuNew.Size = new System.Drawing.Size(103, 22);
             this.fileMenuNew.Text = "New";
             this.fileMenuNew.Click += new System.EventHandler(this.fileMenuNew_Click);
             // 
             // fileMenuOpen
             // 
             this.fileMenuOpen.Name = "fileMenuOpen";
-            this.fileMenuOpen.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuOpen.Size = new System.Drawing.Size(103, 22);
             this.fileMenuOpen.Text = "Open";
             this.fileMenuOpen.Click += new System.EventHandler(this.fileMenuOpen_Click);
             // 
             // fileMenuClose
             // 
             this.fileMenuClose.Name = "fileMenuClose";
-            this.fileMenuClose.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuClose.Size = new System.Drawing.Size(103, 22);
             this.fileMenuClose.Text = "Close";
             this.fileMenuClose.Click += new System.EventHandler(this.fileMenuClose_Click);
             // 
             // fileMenuSave
             // 
             this.fileMenuSave.Name = "fileMenuSave";
-            this.fileMenuSave.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuSave.Size = new System.Drawing.Size(103, 22);
             this.fileMenuSave.Text = "Save";
             this.fileMenuSave.Click += new System.EventHandler(this.fileMenuSave_Click);
             // 
             // fileMenuExit
             // 
             this.fileMenuExit.Name = "fileMenuExit";
-            this.fileMenuExit.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuExit.Size = new System.Drawing.Size(103, 22);
             this.fileMenuExit.Text = "Exit";
             this.fileMenuExit.Click += new System.EventHandler(this.fileMenuExit_Click);
             // 
@@ -140,11 +141,19 @@
             this.AboutMenu.Text = "About...";
             this.AboutMenu.Click += new System.EventHandler(this.AboutMenu_Click);
             // 
+            // loginPassword1
+            // 
+            this.loginPassword1.Location = new System.Drawing.Point(1109, 27);
+            this.loginPassword1.Name = "loginPassword1";
+            this.loginPassword1.Size = new System.Drawing.Size(158, 138);
+            this.loginPassword1.TabIndex = 3;
+            // 
             // MedicalSupplies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 291);
+            this.ClientSize = new System.Drawing.Size(1267, 393);
+            this.Controls.Add(this.loginPassword1);
             this.Controls.Add(this.mainMenu);
             this.IsMdiContainer = true;
             this.Name = "MedicalSupplies";
@@ -171,6 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem editMenuUpdate;
         private System.Windows.Forms.ToolStripMenuItem editMenuDelete;
         private System.Windows.Forms.ToolStripMenuItem AboutMenu;
+        private LoginPassword loginPassword1;
     }
 }
 
