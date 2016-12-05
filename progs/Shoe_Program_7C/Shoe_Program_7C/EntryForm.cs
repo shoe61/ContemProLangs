@@ -84,8 +84,10 @@ namespace Shoe_Program_7C
             //update the child form's table
             if (child != null)
             {
-                child.getUpdate(this.idRichTextBox.Text + "\t" + this.nameRichTextBox.Text + "\t" +
-                    this.qtyReqRichTextBox.Text + "\t" + this.qtyRichTextBox.Text + "\t" 
+                child.getUpdate(this.idRichTextBox.Text.PadRight(16) + "\t"
+                    + this.nameRichTextBox.Text.PadRight(30) + "\t"
+                    + this.qtyReqRichTextBox.Text.PadRight(16) + "\t" 
+                    + this.qtyRichTextBox.Text.PadRight(16) + "\t" 
                     + this.practiceRichTextBox.Text);
             }
 

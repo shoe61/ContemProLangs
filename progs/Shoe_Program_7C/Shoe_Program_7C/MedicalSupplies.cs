@@ -169,11 +169,23 @@ namespace Shoe_Program_7C
             // identify the active child form
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
-            // get the index of the selected record from the form
-            int idx = child.inventoryListBx.SelectedIndex;
+            DialogResult waitAminute = MessageBox.Show("Delete the selected record?", "CONFIRM DELETION",
+                MessageBoxButtons.YesNo);
 
-            // delete the selected line from the child's list box
-            child.getDelete(idx);
+            if (waitAminute == DialogResult.Yes)
+            {
+                // get the index of the selected record from the form
+                int idx = child.inventoryListBx.SelectedIndex;
+
+                // delete the selected line from the child's list box
+                child.getDelete(idx);
+            }
+            else // don't want to delete
+            {
+                // no action necessary
+            }
+
+            
         }
 
         //*****************************************************************************************
