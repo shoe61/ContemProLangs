@@ -40,7 +40,6 @@
             this.editMenuUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginPassword1 = new Shoe_Program_7C.LoginPassword();
             this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,24 +140,17 @@
             this.AboutMenu.Text = "About...";
             this.AboutMenu.Click += new System.EventHandler(this.AboutMenu_Click);
             // 
-            // loginPassword1
-            // 
-            this.loginPassword1.Location = new System.Drawing.Point(1109, 27);
-            this.loginPassword1.Name = "loginPassword1";
-            this.loginPassword1.Size = new System.Drawing.Size(158, 138);
-            this.loginPassword1.TabIndex = 3;
-            // 
             // MedicalSupplies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 393);
-            this.Controls.Add(this.loginPassword1);
             this.Controls.Add(this.mainMenu);
             this.IsMdiContainer = true;
             this.Name = "MedicalSupplies";
             this.Text = "Shoe\'s Hoof and Mouth Supplies";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MedicalSupplies_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -180,7 +172,6 @@
         private System.Windows.Forms.ToolStripMenuItem editMenuUpdate;
         private System.Windows.Forms.ToolStripMenuItem editMenuDelete;
         private System.Windows.Forms.ToolStripMenuItem AboutMenu;
-        private LoginPassword loginPassword1;
     }
 }
 

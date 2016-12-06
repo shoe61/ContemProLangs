@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Scott Schumacher
+ * Medical Supplies.cs
+ * 6 December 2016
+ * This class defines the structure of a record. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +26,8 @@ namespace Shoe_Program_7C
         public Record() : this(0, "", 0, 0, "") { }
 
         // parameterized constructor
-        public Record(int idValue, string nameValue, int qtyReqValue, int qtyValue, string practiceValue)
+        public Record(int idValue, string nameValue, int qtyReqValue, int qtyValue,
+            string practiceValue)
         {
             id = idValue;
             name = nameValue;

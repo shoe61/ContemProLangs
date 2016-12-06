@@ -17,9 +17,14 @@ namespace Shoe_Program_7C
             InitializeComponent();
         }
 
-        private void passwordTextBox_TextChanged(object sender, EventArgs e)
-        {
+        public event EventHandler ButtonClick;
 
+        private void submitBtn_Click(object sender, EventArgs e)
+        {
+            //bubble the event up to the parent
+            if (this.ButtonClick != null)
+                this.ButtonClick(this, e);
+           
         }
     }
 }

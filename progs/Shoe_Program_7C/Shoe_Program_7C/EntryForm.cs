@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* Scott Schumacher
+ * Medical Supplies.cs
+ * 6 December 2016
+ * This class defines the entry form, which is used for inserting new items and updating existing 
+ * entries. It is instantiated with the active child form identified and closes when changes to that
+ * child form's inventory are complete.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +28,7 @@ namespace Shoe_Program_7C
         private int idx;
         string line;
 
-        //*****************************************************************************************
+        // Default Constructor********************************************************************
 
         public EntryForm()
         {
@@ -27,13 +36,13 @@ namespace Shoe_Program_7C
             
         }
 
-        //*****************************************************************************************
+        // Parameterized constructor for specific clinic type and update option********************
 
         public EntryForm(PracticeForm child, bool update)
         {
             InitializeComponent();
 
-            string workfile = MedicalSupplies.workFile;
+            string workfile = MedicalSupplies.workFile; // identifies the input file
 
             this.child = child;
 
@@ -47,12 +56,13 @@ namespace Shoe_Program_7C
                 // get the index of the selected line
                 idx = child.inventoryListBx.SelectedIndex;
                 
-                try
+                try // make sure a record is selected; can't update null object
                 {
                     // read the line as a string
                     line = child.inventoryListBx.Items[idx].ToString();
 
-                    // parse the (tab separated) string to display elements in the appropriate rich text box
+                    // parse the (tab separated) string to display elements in the appropriate rich
+                    // text box
                     string[] split = line.Split('\t');
 
                     // display the indexed elements of 'split' in the text boxes
@@ -70,14 +80,14 @@ namespace Shoe_Program_7C
             }
         }
 
-        //*****************************************************************************************
+        // when the user is finished or changes his or her mind, exit the form********************
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //*****************************************************************************************
+        // provide for insertion of additional entries*********************************************
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
@@ -98,7 +108,7 @@ namespace Shoe_Program_7C
             this.qtyRichTextBox.Text = "";
         }
 
-        //*****************************************************************************************
+        // provides for alteration of existing entry***********************************************
 
         private void updateButton_Click(object sender, EventArgs e)
         {
@@ -114,7 +124,7 @@ namespace Shoe_Program_7C
                     + this.practiceRichTextBox.Text);
             }
 
-            this.Close();
+            this.Close(); // CLOSE AFTER EACH UPDATE TO AVOID ERROR-CAUSING CIRCUMSTANCES
         }
 
         //*****************************************************************************************

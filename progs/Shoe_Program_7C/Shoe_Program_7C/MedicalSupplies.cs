@@ -17,7 +17,7 @@
  */
 
 //*************************************************************************************************
- 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +36,6 @@ namespace Shoe_Program_7C
     public partial class MedicalSupplies : Form
     {
         // Filestream object, BinaryFormatter reader, and string variable for file name
-        private FileStream input;
         private BinaryFormatter fileReader = new BinaryFormatter();
         public static string workFile;
 
@@ -48,13 +47,19 @@ namespace Shoe_Program_7C
         public static bool dentalOpen = false;
         public static bool footOpen = false;
 
-
-
         // Default Constructor********************************************************************
 
         public MedicalSupplies()
         {
             InitializeComponent();
+        }
+
+        // Load: launches modal Login Form*********************************************************
+
+        private void MedicalSupplies_Load(object sender, EventArgs e)
+        {
+            LoginForm theLogIn = new LoginForm();
+            theLogIn.ShowDialog();
         }
 
         // New: Not Implemented********************************************************************
@@ -94,26 +99,42 @@ namespace Shoe_Program_7C
             }
         }
 
-        //*****************************************************************************************
+        // Save the current file*******************************************************************
 
         private void fileMenuSave_Click(object sender, EventArgs e)
         {
+            // First, check to see if child forms are open. If so, ask if want to save.
+            PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
+            if (child != null) // don't try to save what doesn't exist
+            {
+                DialogResult notSoFast = MessageBox.Show("Do you want to save changes?",
+                    "SAVE CHANGES", MessageBoxButtons.YesNo);
+
+                if (notSoFast == DialogResult.Yes) // save  
+                {
+                    child.writeFile();
+                }
+                else // don't want to save...
+                {
+                    Application.Exit();
+                }
+            }
         }
 
-        //*****************************************************************************************
+        // When exiting, check to see if user wants to save****************************************
 
         private void fileMenuExit_Click(object sender, EventArgs e)
         {
             // First, check to see if child forms are open. If so, ask if want to save.
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
-            if(child != null)
+            if (child != null) // don't try to save what doesn't exist
             {
-                DialogResult notSoFast = MessageBox.Show("Do you want to save changes?", "SAVE CHANGES?",
-                MessageBoxButtons.YesNo);
+                DialogResult notSoFast = MessageBox.Show("Do you want to save changes?",
+                    "SAVE CHANGES?", MessageBoxButtons.YesNo);
 
-                if (notSoFast == DialogResult.Yes)
+                if (notSoFast == DialogResult.Yes) // save and exit
                 {
                     child.writeFile();
                     Application.Exit();
@@ -128,19 +149,20 @@ namespace Shoe_Program_7C
             Application.Exit();
         }
 
-        //*****************************************************************************************
+        // provide capability to add inventory items***********************************************
 
         private void editMenuInsert_Click(object sender, EventArgs e)
         {
+            //identify the active child form
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
             //create a new EntryForm, passing child and bool update = false
             Form EntryForm = new EntryForm(child, false);
             EntryForm.Controls.RemoveAt(0); // the update button won't be visible; insert only
             EntryForm.Text = "Insert new inventory item";
-            EntryForm.ShowDialog();
+            EntryForm.ShowDialog(); // show dialog requires action
         }
 
-        //*****************************************************************************************
+        // provide capability to edit existing inventory entries***********************************
 
         private void editMenuUpdate_Click(object sender, EventArgs e)
         {
@@ -150,7 +172,7 @@ namespace Shoe_Program_7C
 
             //create a new EntryForm, passing child and bool update = true
             EntryForm Entry = new EntryForm(child, true);
-            
+
             // This try / catch is necessary in case the user clicks "update" with no record selected.
             try
             {
@@ -164,15 +186,16 @@ namespace Shoe_Program_7C
             }
         }
 
-        //*****************************************************************************************
+        // for deleting entries********************************************************************
 
         private void editMenuDelete_Click(object sender, EventArgs e)
         {
             // identify the active child form
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
-            DialogResult waitAminute = MessageBox.Show("Delete the selected record?", "CONFIRM DELETION",
-                MessageBoxButtons.YesNo);
+            // verify user's intent
+            DialogResult waitAminute = MessageBox.Show("Delete the selected record?",
+                "CONFIRM DELETION", MessageBoxButtons.YesNo);
 
             if (waitAminute == DialogResult.Yes)
             {
@@ -186,11 +209,9 @@ namespace Shoe_Program_7C
             {
                 // no action necessary
             }
-
-            
         }
 
-        //*****************************************************************************************
+        // opens a practice window with the appropriate clinic heading*****************************
 
         private void open_window(string workFile)
         {
@@ -207,8 +228,8 @@ namespace Shoe_Program_7C
                 LakeDental.Show();
             }
 
-            if ((workFile.Contains("foot") || workFile.Contains("odiatry") || workFile.Contains("Foot"))
-                && footOpen == false)
+            if ((workFile.Contains("foot") || workFile.Contains("odiatry")
+                || workFile.Contains("Foot")) && footOpen == false)
             {
                 // Create a new child PracticeForm; assign this form as its parent; display the child
                 // 
@@ -221,56 +242,47 @@ namespace Shoe_Program_7C
             }
         }
 
-        //*****************************************************************************************
+        // for closing practice forms**************************************************************
 
         private void fileMenuClose_Click(object sender, EventArgs e)
         {
             // identify the active child form
             PracticeForm child = this.ActiveMdiChild as PracticeForm;
 
-            try
+            DialogResult notSoFast = MessageBox.Show("Do you want to save changes?",
+                    "SAVE CHANGES", MessageBoxButtons.YesNo);
+
+            if (notSoFast == DialogResult.Yes) // save and exit
             {
-                // call the active child form to serialize the newly edited file
-                child.writeFile();
+                try // can't close and save a null file
+                {
+                    // call the active child form to serialize the newly edited file
+                    child.writeFile();
 
-                // reset the window open boolean variable
-                if (child.Text == "Lake Dental Clinic") { dentalOpen = false; }
-                if (child.Text == "Pickens Foot Clinic") { footOpen = false; }
+                    // reset the window open boolean variable
+                    if (child.Text == "Lake Dental Clinic") { dentalOpen = false; }
+                    if (child.Text == "Pickens Foot Clinic") { footOpen = false; }
 
-                // close the child form 
-                child.Close();
+                    // close the child form 
+                    child.Close();
+                }
+
+                catch (NullReferenceException)
+                {
+                    MessageBox.Show("There's no file open.");
+                }
             }
-
-            catch(NullReferenceException)
+            else // don't want to save...
             {
-                MessageBox.Show("There's no file open.");
+                this.Close();
             }
         }
 
-        //*****************************************************************************************
+        // display the about information***********************************************************
 
         private void AboutMenu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This is a program by Scott Schumacher.");
         }
-
-        //*****************************************************************************************
-
-        //*****************************************************************************************
-
-        /*
-        private void MedicalSupplies_Load(object sender, EventArgs e)
-        {
-            BinaryFormatter writer = new BinaryFormatter();
-            FileStream output = new FileStream("Pickens Foot Clinic.Inv", FileMode.OpenOrCreate, FileAccess.Write);
-            Record nuRec = new Record();
-            nuRec.ID = 4117;
-            nuRec.Name = "socks";
-            nuRec.QtyReq = 54;
-            nuRec.Qty = 41;
-            nuRec.Practice = "Pickens Foot Clinic";
-            writer.Serialize(output, nuRec);
-        }
-      */
     }
 }

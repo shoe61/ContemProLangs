@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* Scott Schumacher
+ * Practice.cs
+ * 6 December 2016
+ * This file defines the practice form, which displays the contents of a clinic's inventory.
+ * It is the component of the project that reads the deserializes the records and serializes
+ * the records when the save button is clicked or the form is closed
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +36,7 @@ namespace Shoe_Program_7C
         public PracticeForm()
         {
             InitializeComponent();
-            
+
         }
 
         //parameterized constructer****************************************************************
@@ -35,9 +44,8 @@ namespace Shoe_Program_7C
         public PracticeForm(string workfile)
         {
             InitializeComponent();
-            workFile = workfile;
-            // Remove the Close menu item.
-            //this.menuManager = new SystemMenuManager(this, SystemMenuManager.MenuItemState.Removed)
+            workFile = workfile; // workfile is passed in to open the correct file
+
         }
 
         //displayInv method reads and displays records from the file*******************************
@@ -53,7 +61,8 @@ namespace Shoe_Program_7C
                 // deserialize and display listBox
                 try
                 {
-                    // iterate over filestream object input, opening a record and appending it to the list
+                    // iterate over filestream object input, opening a record and appending it to 
+                    // the list
                     while (input.Position < input.Length)
                     {
                         // get next Record from file
@@ -61,18 +70,24 @@ namespace Shoe_Program_7C
                         if (newRec == null) continue;
 
                         // store Record values in temporary string array
-                        string[] values = new string[] { newRec.ID.ToString(), newRec.Name.ToString(), 
-                            newRec.QtyReq.ToString(), newRec.Qty.ToString(), newRec.Practice.ToString() };
+                        string[] values = new string[] { newRec.ID.ToString(), 
+                            newRec.Name.ToString(), 
+                            newRec.QtyReq.ToString(), newRec.Qty.ToString(), 
+                            newRec.Practice.ToString() };
 
                         // display in ListBox
-                        inventoryListBx.Items.Add((values[0].PadRight(16)) + "\t" + (values[1].PadRight(30))
-                            + "\t" + (values[2].PadRight(16)) + "\t" + (values[3].PadRight(16)) + "\t" + values[4]);
+                        inventoryListBx.Items.Add((values[0].PadRight(16)) + "\t"
+                            + (values[1].PadRight(30)) + "\t" + (values[2].PadRight(16)) + "\t"
+                            + (values[3].PadRight(16)) + "\t" + values[4]);
+
+                        // sort the items by id
+                        inventoryListBx.Sorted = true;
                     }
                 }
 
                 catch (IOException)
                 {
-                    MessageBox.Show("oops.");
+                    MessageBox.Show("Unable to open file.");
                 }
             }
         }
@@ -88,7 +103,7 @@ namespace Shoe_Program_7C
 
         public void getDelete(int idx)
         {
-            try 
+            try // handles Argument out of range exception
             {
                 inventoryListBx.Items.RemoveAt(idx);
             }
@@ -96,7 +111,7 @@ namespace Shoe_Program_7C
             {
                 MessageBox.Show("You must select an item to delete.");
             }
-            
+
         }
 
         // writeFile is called whenever a close  or save command is issued*************************
@@ -106,15 +121,16 @@ namespace Shoe_Program_7C
             // open the filestream and binary formatter
             using (output = new FileStream(workFile, FileMode.Create, FileAccess.Write))
             {
-                // loop through listBox items, creating a new record from each line and serializing that 
-                // record to the file.
+                // loop through listBox items, creating a new record from each line and serializing  
+                // that record to the file.
 
                 for (int idx = 0; idx < inventoryListBx.Items.Count; idx++)
                 {
                     // read the line
                     var line = inventoryListBx.Items[idx].ToString();
 
-                    // parse the (tab separated) string to display elements in the appropriate rich text box
+                    // parse the (tab separated) string to display elements in the appropriate rich 
+                    // text box
                     string[] split = line.Split('\t');
 
                     // create the record from the elements of split[]

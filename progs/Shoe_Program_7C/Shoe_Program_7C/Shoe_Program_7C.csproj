@@ -50,11 +50,11 @@
     <Compile Include="EntryForm.Designer.cs">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPassword.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPassword.Designer.cs">
-      <DependentUpon>LoginPassword.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MedicalSupplies.cs">
       <SubType>Form</SubType>
@@ -74,8 +74,8 @@
     <EmbeddedResource Include="EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPassword.resx">
-      <DependentUpon>LoginPassword.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicalSupplies.resx">
       <DependentUpon>MedicalSupplies.cs</DependentUpon>
