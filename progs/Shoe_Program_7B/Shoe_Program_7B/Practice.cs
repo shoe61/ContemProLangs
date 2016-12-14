@@ -12,10 +12,17 @@ namespace Shoe_Program_7B
 {
     public partial class PracticeForm : Form
     {
+        public string workFile;
+
         public PracticeForm()
         {
             InitializeComponent();
-            
+        }
+
+        public PracticeForm(string workfile)
+        {
+            InitializeComponent();
+            this.workFile = workfile;
         }
 
         public void displayInv()
@@ -28,7 +35,28 @@ namespace Shoe_Program_7B
                     + MedicalSupplies.theList[i][3] + "\r\t"
                     + MedicalSupplies.theList[i][4]);
             }
+        }
 
+        public void getUpdate(string update)
+        {
+            inventoryListBx.Items.Add(update);
+        }
+
+        public void getDelete(int idx)
+        {
+            inventoryListBx.Items.RemoveAt(idx);
+        }
+
+        private void PracticeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (this.Text == "Lake Dental Clinic")
+            {
+                MedicalSupplies.dentalOpen = false;
+            }
+            if (this.Text == "Pickens Foot Clinic")
+            {
+                MedicalSupplies.footOpen = false;
+            }
         }
     }
 }

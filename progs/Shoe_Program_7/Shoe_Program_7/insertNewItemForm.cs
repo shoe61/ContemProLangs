@@ -15,12 +15,7 @@ namespace Shoe_Program_7
 {
     public partial class insertNewItemForm : MedicalSupplies
     {
-
-        
-
         BinaryFormatter writer = new BinaryFormatter();
-
-
 
         public insertNewItemForm()
         {
@@ -35,7 +30,6 @@ namespace Shoe_Program_7
 
         private void InsertButton_Click(object sender, EventArgs e)
         {
-            
             Record temp = new Record();
             try
             {

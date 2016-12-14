@@ -167,7 +167,7 @@ namespace Shoe_Program_7
             {
                 insertNewItemForm insertForm = new insertNewItemForm();
                 insertFormOpen = true;
-                insertForm.Show();
+                insertForm.ShowDialog();
 
             }
         }
@@ -176,8 +176,11 @@ namespace Shoe_Program_7
 
         //*************************************************************************************************************
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        public void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+           //if (ActiveMdiChild.Name == "DentalForm") { DentalForm.deleter(); }
+            /*
             DialogResult dialogResult = MessageBox.Show("Do you intend to delete the selected Record?", "Confirm Delete", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -192,6 +195,8 @@ namespace Shoe_Program_7
             {
                 //do something else
             }
+             * 
+             */
         }
 
         //*************************************************************************************************************

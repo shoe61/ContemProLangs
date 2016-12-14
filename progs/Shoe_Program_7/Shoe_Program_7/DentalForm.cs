@@ -13,8 +13,6 @@ namespace Shoe_Program_7
     public partial class DentalForm : Form
     {
 
-        private static string[] newValue;
-
         public DentalForm()
         {
             InitializeComponent();
@@ -27,6 +25,12 @@ namespace Shoe_Program_7
                     + MedicalSupplies.theList[i][3] + "\r\t"  
                     + MedicalSupplies.theList[i][4]);
             }
+        }
+
+
+        public void deleter()
+        {
+           inventoryListBox.ClearSelected();
         }
     }
 }

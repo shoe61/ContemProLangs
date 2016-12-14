@@ -24,8 +24,14 @@ namespace Shoe_Program_7
                     + MedicalSupplies.theList[i][3] + "\r\t"
                     + MedicalSupplies.theList[i][4]);
             }
+
+            
         }
 
+        public void deleter()
+        {
+            inventoryListBox.ClearSelected();
+        }
         
 
 

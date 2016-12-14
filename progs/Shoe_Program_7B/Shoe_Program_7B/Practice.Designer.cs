@@ -47,12 +47,13 @@
             this.Controls.Add(this.inventoryListBx);
             this.Name = "PracticeForm";
             this.Text = "Items on hand";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PracticeForm_FormClosed);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox inventoryListBx;
+        public System.Windows.Forms.ListBox inventoryListBx;
     }
 }

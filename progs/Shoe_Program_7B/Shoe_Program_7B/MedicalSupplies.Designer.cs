@@ -70,13 +70,13 @@
             // fileMenuNew
             // 
             this.fileMenuNew.Name = "fileMenuNew";
-            this.fileMenuNew.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuNew.Size = new System.Drawing.Size(103, 22);
             this.fileMenuNew.Text = "New";
             // 
             // fileMenuOpen
             // 
             this.fileMenuOpen.Name = "fileMenuOpen";
-            this.fileMenuOpen.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuOpen.Size = new System.Drawing.Size(103, 22);
             this.fileMenuOpen.Text = "Open";
             this.fileMenuOpen.Click += new System.EventHandler(this.fileMenuOpen_Click);
             // 
@@ -85,17 +85,18 @@
             this.fileMenuClose.Name = "fileMenuClose";
             this.fileMenuClose.Size = new System.Drawing.Size(152, 22);
             this.fileMenuClose.Text = "Close";
+            this.fileMenuClose.Click += new System.EventHandler(this.fileMenuClose_Click);
             // 
             // fileMenuSave
             // 
             this.fileMenuSave.Name = "fileMenuSave";
-            this.fileMenuSave.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuSave.Size = new System.Drawing.Size(103, 22);
             this.fileMenuSave.Text = "Save";
             // 
             // fileMenuExit
             // 
             this.fileMenuExit.Name = "fileMenuExit";
-            this.fileMenuExit.Size = new System.Drawing.Size(152, 22);
+            this.fileMenuExit.Size = new System.Drawing.Size(103, 22);
             this.fileMenuExit.Text = "Exit";
             // 
             // editMenu
@@ -113,18 +114,21 @@
             this.editMenuInsert.Name = "editMenuInsert";
             this.editMenuInsert.Size = new System.Drawing.Size(152, 22);
             this.editMenuInsert.Text = "Insert";
+            this.editMenuInsert.Click += new System.EventHandler(this.editMenuInsert_Click);
             // 
             // editMenuUpdate
             // 
             this.editMenuUpdate.Name = "editMenuUpdate";
             this.editMenuUpdate.Size = new System.Drawing.Size(152, 22);
             this.editMenuUpdate.Text = "Update";
+            this.editMenuUpdate.Click += new System.EventHandler(this.editMenuUpdate_Click);
             // 
             // editMenuDelete
             // 
             this.editMenuDelete.Name = "editMenuDelete";
             this.editMenuDelete.Size = new System.Drawing.Size(152, 22);
             this.editMenuDelete.Text = "Delete";
+            this.editMenuDelete.Click += new System.EventHandler(this.editMenuDelete_Click);
             // 
             // AboutMenu
             // 
@@ -136,13 +140,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(787, 267);
             this.Controls.Add(this.mainMenu);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "MedicalSupplies";
             this.Text = "Shoe\'s Hoof and Mouth Supplies";
-            //this.Load += new System.EventHandler(this.MedicalSupplies_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
