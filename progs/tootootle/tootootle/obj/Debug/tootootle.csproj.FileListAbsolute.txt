@@ -1,9 +1,0 @@
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\bin\Debug\tootootle.exe.config
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\bin\Debug\tootootle.exe
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\bin\Debug\tootootle.pdb
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.csprojResolveAssemblyReference.cache
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.Radio.resources
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.Properties.Resources.resources
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.csproj.GenerateResource.Cache
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.exe
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootootle\tootootle\obj\Debug\tootootle.pdb

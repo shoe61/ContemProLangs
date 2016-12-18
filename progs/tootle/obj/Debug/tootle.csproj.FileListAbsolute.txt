@@ -1,9 +1,0 @@
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\bin\Debug\tootle.exe.config
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\bin\Debug\tootle.exe
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\bin\Debug\tootle.pdb
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.csprojResolveAssemblyReference.cache
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.Form1.resources
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.Properties.Resources.resources
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.csproj.GenerateResource.Cache
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.exe
-C:\Users\our\Desktop\fall 16\contemprolangs\progs\tootle\obj\Debug\tootle.pdb
