@@ -1,0 +1,334 @@
+/**************************************************************************************************	
+ * Scott Schumacher
+ * 
+ * File name: HiddenWordGame.java
+ * 
+ * Description: This program implements a two-player game. Player One types in a word which becomes
+ * 				an instance of the HiddenWord class. Player Two, with benefit of hints about the 
+ * 				length of the hidden word and accumulated hints about the location of letters 
+ * 				within the word, must guess the hidden word within ten guesses.
+ *************************************************************************************************/
+
+import java.io.IOException;
+import java.util.Scanner;
+
+/**************************************************************************************************
+ * class HiddenWordGame
+ * 
+ * This is the brains of the operation; it defines the course of game play by calling appropriate 
+ * methods, whether its own or those contained in the HiddenWord class. 
+ *************************************************************************************************/
+
+public class HiddenWordGame
+{
+	enum Reason {Puzzle, Guess, Winner}
+	static Reason p = Reason.Puzzle;
+	static Reason g = Reason.Guess;
+	static Reason w = Reason.Winner;
+	
+	static Scanner playerIn = new Scanner(System.in);
+	
+	/**********************************************************************************************
+	 * public static void main(String[] args)
+	 * 
+	 * In Java, all functions are methods of some class; main is static because it does not operate
+	 * on objects and void because it does not return a value of any type. According to Java 
+	 * Language Specification (JLS) main must be a public method. Program execution begins with in
+	 * this method; its main job is to call the methods that do the work.
+	 * @param: none
+	 * @return: none
+	 *********************************************************************************************/
+	
+	public static void main(String[] args) 
+	{
+		// Present a welcome / instruction / rules page 
+		
+		welcome();
+		
+		// Prompt player one to input the hidden word
+		
+		String verbum = getString(p, "", 0);
+		
+		// Call HiddenWord constructor
+		
+		HiddenWord puzzle = new HiddenWord(verbum);
+		
+		// This array will store the ten guesses and the hints. Using an array eliminates the 
+		// problem of having rename the guess and hint strings...strings are immutable, so we
+		// can't reassign their values. The array size is 11 to account for the zero hint; that
+		// way the player still gets ten turns.
+		
+		String[][] guessesHints = new String[11][2]; 
+		
+		// Prime the pump: call getHint with an empty string to get the first hint, which is the 
+		// length of the hidden word. This doesn't count as one of the player's guesses.
+		
+		guessesHints[0][0] = ""; 
+		guessesHints[0][1] = puzzle.getHint(guessesHints[0][0]);
+		
+		// Now, give Player Two 10 guesses. The loop iterates from 1 to <11 to continue the 
+		// index sequence from the zero round above.
+		
+		for(int i = 1; i < 11; i++)
+		{
+			// Check for winner
+			
+			if(guessesHints [i-1][1] == "WINNER")
+				{
+					getString(w, guessesHints[i-1][0], i);
+					break;
+				}
+			
+			// Show the hint and get player's guess
+			
+			guessesHints[i][0] = getString(g, guessesHints[i-1][1], i);
+			
+			// Check the guess against the hidden word
+			
+			guessesHints[i][1] = puzzle.getHint(guessesHints[i][0]);
+		}
+	}
+	
+	/**********************************************************************************************
+	 * private static void welcome()
+	 * 
+	 * Clears the console window to present an attractive display; displays a welcome message and 
+	 * instructions for playing the game.
+	 * @param: none
+	 * @return: none
+	 *********************************************************************************************/
+	
+	private static void welcome()
+	{
+		// Clear the screen
+		
+		
+		// Display game instructions
+		
+		System.out.print("Hello, and thanks for playing the Hidden Word Game. Press any key "
+				+ "to continue.");
+		
+		
+		// Display until any key pressed
+		
+		try {
+			System.in.read();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	/**********************************************************************************************
+	 * private static void getPuzzle()
+	 * 
+	 * Prompts Player One to enter a word which will be hidden from Player Two; calls HiddenWord to 
+	 * construct a HiddenWord object.
+	 * @param: none
+	 * @return: none
+	 *********************************************************************************************/
+	
+	private static String getString(Reason reason, String hint, int round)
+	{
+		final int lastRound = round -1;
+		
+		if(reason == p)
+		{
+			// Prompt Player One to enter a word, concealing it from Player Two
+			
+			System.out.println("Player One, please ensure that Player Two isn't peeking...enter "
+					+ "a word" + " your opponent will never guess!");
+			
+			// Get the word; return it
+			
+			String verbum = playerIn.next();
+			return verbum;
+		}
+		
+		else if(reason == w)
+		{
+			// Print congratulations
+			
+			System.out.println("Congratulations! You won the game in " + (round-1) + " rounds!");
+						
+			if(lastRound == 1)
+			{
+				System.out.println("Guessing a " + hint.length() + " letter word like " + hint + 
+						" in one try is possible but unlikely; \nif it happens too frequently" +
+						" the Board of Governors will order an investigation.");
+			}
+			
+			else if(lastRound == 2)
+			{
+				//
+			}
+				
+			return "";
+		}
+		
+		else // reason is guess
+		{
+			// Display hint
+			
+			if(round == 0)
+			{
+				System.out.println("Here's a free hint: " + hint);
+			}
+			
+			else
+			{
+				System.out.println("Here is your hint for Round " + round + ": " + hint);
+				System.out.println("Please enter your guess for Round " + round + ".");
+			}
+			
+			
+			// Get the guess
+			
+			String thisGuess = playerIn.next();
+			return thisGuess;
+		}
+	}
+}
+
+/**************************************************************************************************
+ **************************************************************************************************
+ *************************************************************************************************/
+
+	
+/**************************************************************************************************
+ * class HiddenWord
+ * 
+ * This class specifies the structure of, and instantiates HiddenWord objects. It contains methods
+ * that change the state of HiddenWord objects.
+ *************************************************************************************************/
+
+class HiddenWord
+{
+	private final String target; // This is the "hidden word" that Player Two must guess.
+	private int[] standard; 
+	
+	/********************************************************************************************** 
+	 * Parameterized Constructor: instantiates an object of the HiddenWord class
+	 * 
+	 * @param: String verbum
+	 * @return: none; it's a constructor, which by definition has no return type.	 
+	 * 
+	 *********************************************************************************************/
+	
+	HiddenWord(String verbum)
+	{
+		// Instance variables target and standard against which guesses are measured
+		
+		target = verbum.toUpperCase();
+		standard = target.codePoints().toArray();
+	}
+	
+	/********************************************************************************************** 
+	 * getHint: compares standard to guess; formulates hint
+	 * 
+	 * @param: guess, which is guess[i]
+	 * @return: String hint
+	 *********************************************************************************************/
+	
+	String getHint(String guess)
+	{
+		// If guess is a zero-length string, it's the beginning of the game; just return the number
+		// of letters in the hidden word.
+		
+		if(guess.length() == 0)
+		{
+			return "Your hidden word is " + target.length() + " letters long.";
+		}
+		
+		// If the guess is not the same length as the standard, then the next hint is to warn the
+		// player to pay more attention to the instructions. A failure to enter a guess of the 
+		// correct length costs a player a turn.
+		
+		else if (guess.length() != target.length())
+		{
+			return "Be Careful! Your guess must have " + target.length() + " letters.";
+		}
+		
+		// During normal game play, guesses will have the same number of letters as the hidden word.
+		
+		else
+		{
+			// Convert the guess string to upper case and an integer array that can be compared with
+			// standard, which is the integer array of the hidden word.
+			
+			String currentGuess = guess.toUpperCase();
+			int[] thisGuess = currentGuess.codePoints().toArray();
+			
+			// Check for a winner
+			
+			if(currentGuess.compareTo(target) == 0)
+			{
+				return "WINNER";
+			}
+			
+			else
+			{
+				// Construct an array to contain the results of comparing thisGuess to standard;   
+				// the elements are initialized to zero, the default for integers. The array will 
+				// ultimately be converted to a string and returned as the hint.
+				
+				int[] newHint = new int[target.length()];
+				
+				// Compare thisGuess to standard and append newHint accordingly; first check for 
+				// correct letter in correct position. If so, letter appears in hint.
+				
+				for(int i = 0; i < target.length(); i ++)
+				{
+					if(thisGuess[i] == standard[i])
+					{
+						newHint[i] = standard[i];
+					}
+					
+					// Check to see if the letter appears elsewhere in the hidden word; if so, 
+					// a "+" appears in hint.
+					
+					else if(contains(standard, thisGuess[i]))
+					{
+						newHint[i] = 43;
+					}
+					
+					// Otherwise, a "-" appears in the hint, indicating the letter's not in the
+					// hidden word.
+					
+					else
+					{
+						newHint[i] = 45;
+					}
+				}
+				
+				// Turn the newHint array back into a string and return it.
+				
+				String hint = new String(newHint, 0, newHint.length);
+				return hint;
+			}
+		} 
+	}
+	
+	/********************************************************************************************** 
+	 * private static boolean contains: checks an array to see if it contains an element
+	 * 
+	 * @param: int[] arr, the array to be checked; int elem, the object of the search
+	 * @return: true if element found; else false.
+	 *********************************************************************************************/
+	
+	private static boolean contains(int[] arr, int elem)
+	{
+		boolean cont = false;
+		
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(elem == arr[i])
+			{
+				cont = true;
+			}
+		}
+		
+		return cont;
+	}
+	
+}

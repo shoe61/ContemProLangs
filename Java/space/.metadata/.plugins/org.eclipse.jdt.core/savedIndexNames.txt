@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+C:\ContemProLangs\Java\space\.metadata\.plugins\org.eclipse.jdt.core
+3410937259.index
